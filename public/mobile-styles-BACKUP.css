@@ -1,0 +1,655 @@
+/* ═══════════════════════════════════════
+   MOBILE RESPONSIVE STYLES
+   Include this file in all pages for mobile optimization
+═══════════════════════════════════════ */
+
+/* ─── HAMBURGER MENU ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10000;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--gold-lt);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ─── MOBILE BREAKPOINTS ─── */
+@media (max-width: 768px) {
+  
+  /* Force all flex containers to column */
+  .flex, [style*="display: flex"], [style*="display:flex"] {
+    flex-direction: column !important;
+  }
+  
+  /* Show hamburger, hide desktop nav */
+  .hamburger {
+    display: flex !important;
+  }
+  
+  /* Navigation adjustments */
+  nav {
+    padding: 0 20px !important;
+    height: 60px !important;
+  }
+  
+  nav.scrolled {
+    height: 60px !important;
+  }
+  
+  .logo-wrap {
+    flex-direction: row !important;
+  }
+  
+  .logo-wrap img {
+    height: 42px !important;
+  }
+  
+  /* Mobile nav menu */
+  .nav-links {
+    position: fixed !important;
+    top: 60px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: auto !important;
+    background: rgba(15,23,38,.98) !important;
+    backdrop-filter: blur(20px);
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 20px 0 !important;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease,
+                visibility 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0,0,0,.5);
+    border-bottom: 1px solid rgba(201,168,76,.2);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-links li {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255,255,255,.05);
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-links a {
+    padding: 16px 32px !important;
+    height: auto !important;
+    font-size: 0.7rem !important;
+    border-bottom: none !important;
+    border-left: 3px solid transparent !important;
+  }
+  
+  .nav-links a.active,
+  .nav-links a:hover {
+    border-left-color: var(--gold-lt) !important;
+    border-bottom-color: transparent !important;
+    background: rgba(201,168,76,.08);
+  }
+  
+  /* Hero section */
+  .hero {
+    min-height: 500px !important;
+    height: 70vh !important;
+  }
+  
+  .hero-content {
+    padding: 0 24px 48px !important;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem) !important;
+  }
+  
+  .hero-btn {
+    padding: 14px 32px !important;
+    font-size: 0.65rem !important;
+  }
+  
+  /* Intro panel */
+  .intro-panel {
+    flex-direction: column !important;
+    padding: 40px 20px !important;
+    gap: 32px !important;
+    text-align: center !important;
+  }
+  
+  .intro-left,
+  .intro-right {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .intro-left h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 16px !important;
+    text-align: center !important;
+  }
+  
+  .intro-left p {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+    text-align: center !important;
+  }
+  
+  .intro-right {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  /* Stats section - full vertical stack */
+  .stats-inner {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  
+  .stat {
+    width: 100% !important;
+    padding: 32px 20px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,.15) !important;
+    min-height: auto !important;
+  }
+  
+  .stat:last-child {
+    border-bottom: none !important;
+  }
+  
+  .stat-row,
+  .builder-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  
+  .orn {
+    display: none !important;
+  }
+  
+  .counter {
+    font-size: 3rem !important;
+    line-height: 1 !important;
+  }
+  
+  .stat span {
+    font-size: 0.7rem !important;
+    text-align: center !important;
+  }
+  
+  .stat p {
+    text-align: center !important;
+    font-size: 0.8rem !important;
+  }
+  
+  /* Page sections - force vertical */
+  .pg-section {
+    padding: 50px 20px !important;
+  }
+  
+  .pg-section > * {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .sec-head {
+    text-align: center !important;
+    margin-bottom: 32px !important;
+  }
+  
+  .sec-head h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .sec-head .tagline {
+    font-size: 0.65rem !important;
+  }
+  
+  .sec-head p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-top: 12px !important;
+  }
+  
+  /* Collection cards */
+  .coll-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  
+  .coll-card {
+    min-height: 320px !important;
+  }
+  
+  /* Gallery grid */
+  .g-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .g-item.tall {
+    grid-row: span 1 !important;
+  }
+  
+  /* Community section */
+  .comm-split {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+  
+  .comm-left,
+  .comm-right {
+    width: 100% !important;
+    padding: 40px 20px !important;
+  }
+  
+  .comm-content {
+    text-align: center !important;
+  }
+  
+  .comm-content h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .comm-content p {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+  }
+  
+  /* Contact section */
+  .contact-split {
+    flex-direction: column !important;
+  }
+  
+  .contact-left,
+  .contact-right {
+    width: 100% !important;
+    padding: 40px 20px !important;
+  }
+  
+  .contact-form {
+    width: 100% !important;
+  }
+  
+  /* Any two-column or multi-column layouts */
+  .split,
+  .two-col,
+  .cols,
+  [class*="-split"],
+  [class*="-cols"],
+  [class*="split"] {
+    flex-direction: column !important;
+  }
+  
+  .split > *,
+  .two-col > *,
+  .cols > *,
+  [class*="-split"] > *,
+  [class*="-cols"] > *,
+  [class*="split"] > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+  
+  /* Force all rows to stack */
+  [class*="row"],
+  [class*="-row"] {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  [class*="row"] > *,
+  [class*="-row"] > * {
+    width: 100% !important;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 48px 20px 32px !important;
+  }
+  
+  .foot-cols {
+    flex-direction: column !important;
+    gap: 40px !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+  
+  .foot-logo,
+  .foot-links,
+  .foot-addr {
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .foot-links {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  .foot-links a {
+    display: block !important;
+    padding: 8px 0 !important;
+  }
+  
+  .foot-addr {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  
+  .foot-addr span {
+    display: block !important;
+  }
+  
+  .foot-copy {
+    text-align: center !important;
+    margin-top: 32px !important;
+  }
+  
+  /* Model detail pages */
+  .panel-stack {
+    margin: 0 !important;
+  }
+  
+  .panel-content {
+    padding: 40px 20px !important;
+  }
+  
+  .panel-content > * {
+    width: 100% !important;
+  }
+  
+  .panel-intro {
+    text-align: center !important;
+  }
+  
+  .panel-intro h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .panel-intro p {
+    font-size: 0.9rem !important;
+    line-height: 1.65 !important;
+  }
+  
+  /* Highlights section */
+  .highlights {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  .hl-item {
+    width: 100% !important;
+    padding: 24px !important;
+    text-align: center !important;
+  }
+  
+  .hl-item h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .hl-item p {
+    font-size: 0.85rem !important;
+  }
+  
+  /* Elevation switcher */
+  .elev-tabs {
+    gap: 12px !important;
+  }
+  
+  .elev-tab {
+    padding: 10px 20px !important;
+    font-size: 0.6rem !important;
+  }
+  
+  /* Slider */
+  .img-slider {
+    min-height: 280px !important;
+  }
+  
+  .slider-label {
+    padding: 8px 16px !important;
+    font-size: 0.58rem !important;
+  }
+  
+  /* Page hero (inner pages) */
+  .page-hero {
+    min-height: 320px !important;
+    height: 45vh !important;
+  }
+  
+  .page-hero-content {
+    padding: 0 24px 40px !important;
+  }
+  
+  .page-hero-content h1 {
+    font-size: clamp(1.8rem, 5vw, 2.4rem) !important;
+  }
+  
+  /* Models grid */
+  .models-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  
+  /* About timeline */
+  .timeline-item {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  .timeline-year {
+    font-size: 1.8rem !important;
+  }
+  
+  /* Disable custom cursor on mobile */
+  #cur-dot,
+  #cur-ring {
+    display: none !important;
+  }
+  
+  body,
+  * {
+    cursor: auto !important;
+  }
+  
+  /* GLOBAL VERTICAL FORCE - catch-all rules */
+  
+  /* Force all display:flex to column unless explicitly row */
+  div[style*="display: flex"]:not([style*="flex-direction: row"]),
+  div[style*="display:flex"]:not([style*="flex-direction:row"]) {
+    flex-direction: column !important;
+  }
+  
+  /* Center all headings on mobile */
+  h1, h2, h3, h4, h5, h6 {
+    text-align: center !important;
+  }
+  
+  /* Center section content */
+  section > p,
+  .section > p,
+  [class*="section"] > p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* Make all grid columns single column */
+  [style*="display: grid"],
+  [style*="display:grid"],
+  [class*="grid"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Force full width for common content containers */
+  .container,
+  .content,
+  .wrapper,
+  [class*="container"],
+  [class*="content"],
+  [class*="wrapper"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  /* Images responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Buttons full width on mobile for better touch */
+  button,
+  .btn,
+  [class*="btn"],
+  input[type="submit"],
+  input[type="button"] {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+  
+  /* Exception: small utility buttons */
+  button[class*="close"],
+  button[class*="icon"],
+  .btn-icon,
+  .icon-btn {
+    width: auto !important;
+    display: inline-flex !important;
+  }
+}
+
+
+/* ─── TABLET BREAKPOINT ─── */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    padding: 0 32px !important;
+  }
+  
+  .coll-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .g-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .models-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .pg-section {
+    padding: 60px 40px !important;
+  }
+}
+
+/* ─── SMALL MOBILE ─── */
+@media (max-width: 480px) {
+  nav {
+    padding: 0 16px !important;
+  }
+  
+  .logo-wrap img {
+    height: 36px !important;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .pg-section {
+    padding: 40px 16px !important;
+  }
+  
+  .intro-panel {
+    padding: 32px 16px !important;
+  }
+  
+  .stat {
+    padding: 24px 16px !important;
+  }
+  
+  .counter {
+    font-size: 2.6rem !important;
+  }
+  
+  .sec-head h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .comm-left,
+  .comm-right,
+  .contact-left,
+  .contact-right,
+  .panel-content {
+    padding: 32px 16px !important;
+  }
+  
+  /* Even more vertical centering */
+  * {
+    text-align: center !important;
+  }
+  
+  /* Exception: form inputs and textareas should be left-aligned */
+  input,
+  textarea,
+  select {
+    text-align: left !important;
+  }
+  
+  footer {
+    padding: 40px 16px 24px !important;
+  }
+}
+
