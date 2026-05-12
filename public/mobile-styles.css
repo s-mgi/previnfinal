@@ -597,6 +597,46 @@
     font-size: 0.72rem !important;
   }
   
+  .model-cta {
+    font-size: 0.65rem !important;
+    padding: 12px 28px !important;
+  }
+  
+  /* ─── MODELS: Compare Table (models.html) ─── */
+  .mdx-compare {
+    padding: 60px 20px !important;
+  }
+  
+  .mdx-table-wrap {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin: 0 -20px !important;
+    padding: 0 20px !important;
+  }
+  
+  .mdx-table {
+    min-width: 600px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .mdx-table th,
+  .mdx-table td {
+    padding: 12px 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .mdx-th-name {
+    font-size: 0.85rem !important;
+  }
+  
+  .mdx-th-meta {
+    font-size: 0.62rem !important;
+  }
+  
+  .mdx-choose {
+    padding: 60px 20px !important;
+  }
+  
   /* ─── CONTACT: Form layout ─── */
   .contact-split {
     flex-direction: column !important;

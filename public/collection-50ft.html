@@ -161,7 +161,7 @@ body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background
 .model-acc-left{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap}
 .model-acc-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--navy);line-height:1.2}
 .model-acc-name em{font-style:italic;color:var(--gold);font-weight:500}
-.model-acc-meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
+.model-acc-meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;gap:12px}
 .model-acc-meta span{font-size:.78rem;color:#5e7088;font-weight:500}
 .model-acc-meta strong{color:var(--navy);font-weight:600;font-family:'Playfair Display',serif;margin-right:4px}
 .model-acc-meta .model-acc-tag{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
@@ -300,7 +300,7 @@ footer{background:var(--navy-coll);color:#fff;padding:80px 80px 32px;display:gri
   .macc-specs{grid-template-columns:repeat(2,1fr);row-gap:20px}
   .macc-specs .macc-spec:nth-child(2){border-right:none}
   .model-acc-name{font-size:1.3rem}
-  .model-acc-meta{gap:10px;font-size:.7rem}
+  .model-acc-meta{gap:10px;font-size:.7rem;gap:12px}
 }
 
 
@@ -338,6 +338,7 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 }
 /* END canonical nav */
 </style>
+  <link rel="stylesheet" href="mobile-styles.css">
 </head>
 <body>
 
@@ -1057,5 +1058,6 @@ window.addEventListener('scroll',function(){var n=document.getElementById('main-
 
 </script>
 
+<script src="mobile-menu.js"></script>
 </body>
 </html>

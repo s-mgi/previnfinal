@@ -161,7 +161,7 @@ body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background
 .model-acc-left{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap}
 .model-acc-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--navy);line-height:1.2}
 .model-acc-name em{font-style:italic;color:var(--gold);font-weight:500}
-.model-acc-meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
+.model-acc-meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;gap:12px}
 .model-acc-meta span{font-size:.78rem;color:#5e7088;font-weight:500}
 .model-acc-meta strong{color:var(--navy);font-weight:600;font-family:'Playfair Display',serif;margin-right:4px}
 .model-acc-meta .model-acc-tag{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
@@ -305,7 +305,7 @@ footer{background:var(--navy-coll);color:#fff;padding:80px 80px 32px;display:gri
   .macc-specs{grid-template-columns:repeat(2,1fr);row-gap:20px}
   .macc-specs .macc-spec:nth-child(2){border-right:none}
   .model-acc-name{font-size:1.3rem}
-  .model-acc-meta{gap:10px;font-size:.7rem}
+  .model-acc-meta{gap:10px;font-size:.7rem;gap:12px}
 }
 
 
@@ -343,6 +343,7 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 }
 /* END canonical nav */
 </style>
+  <link rel="stylesheet" href="mobile-styles.css">
 </head>
 <body>
 
@@ -408,17 +409,17 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
     <h2 class="mgs-h2">Choose Your <em>Model</em></h2>
   </div>
   <div class="mgs-grid">
-    <button type="button" class="mgs-card rv vis" data-target="acc-brechtin">
+    <button type="button" class="mgs-card rv vis" data-target="acc-brechin">
       <div class="mgs-card-img">
         <span class="mgs-card-badge">Two-Storey · 1,650 sqft</span>
-        <img src="images/models/brechtin/elevation-a.jpg" alt="The Brechtin">
+        <img src="images/models/brechtin/elevation-a.jpg" alt="The Brechin">
       </div>
       <div class="mgs-card-body">
-        <h3 class="mgs-card-name">The <em>Brechtin</em></h3>
+        <h3 class="mgs-card-name">The <em>Brechin</em></h3>
         <span class="mgs-card-tag">Compact Family Home</span>
         <div class="mgs-card-meta">
           <span class="mgs-card-meta-item"><strong>1,650</strong>sqft</span>
-          <span class="mgs-card-meta-item"><strong>3</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
           <span class="mgs-card-meta-item"><strong>2.5</strong>bath</span>
           <span class="mgs-card-meta-item"><strong>1</strong>car</span>
         </div>
@@ -435,7 +436,7 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
         <span class="mgs-card-tag">Modern Two-Storey</span>
         <div class="mgs-card-meta">
           <span class="mgs-card-meta-item"><strong>1,770</strong>sqft</span>
-          <span class="mgs-card-meta-item"><strong>3</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
           <span class="mgs-card-meta-item"><strong>2.5</strong>bath</span>
           <span class="mgs-card-meta-item"><strong>1</strong>car</span>
         </div>
@@ -508,11 +509,11 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 
 <section class="model-stack">
 
-  <!-- MODEL: Brechtin -->
-  <div class="model-acc" id="acc-brechtin" data-model="brechtin" data-name="Brechtin" data-type="two-storey" data-meta="1,650 sqft · 3 bed · 2.5 bath · Two-Storey">
+  <!-- MODEL: Brechin -->
+  <div class="model-acc" id="acc-brechin" data-model="brechin" data-name="Brechin" data-type="two-storey" data-meta="1,650 sqft · <strong>4</strong>bed · 2.5 bath · Two-Storey">
     <button type="button" class="model-acc-header" aria-expanded="false">
       <div class="model-acc-left">
-        <h3 class="model-acc-name">The <em>Brechtin</em></h3>
+        <h3 class="model-acc-name">The <em>Brechin</em></h3>
         <div class="model-acc-meta">
           <span class="model-acc-tag">Compact Family Home</span>
           <span><strong>1,650</strong>sqft</span>
@@ -527,7 +528,7 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
       <div class="model-acc-content">
 
         <!-- TOP: hero render + info -->
-        <div class="macc-info-full">            <h3>The <em>Brechtin</em></h3>
+        <div class="macc-info-full">            <h3>The <em>Brechin</em></h3>
             <p class="macc-desc">An efficient three-bedroom layout designed for first-time buyers and small families. Open-concept main floor with a chef-style kitchen, dining, and great room flowing together.</p>
             <div class="macc-specs">
               <div class="macc-spec"><span class="macc-spec-num">1,650</span><span class="macc-spec-lbl">Sq Ft</span></div>
@@ -547,8 +548,8 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 
         <!-- Active exterior render — swaps when A/B is clicked -->
         <div class="macc-render-frame">
-          <img class="macc-render-img active" data-elev="a" src="images/models/brechtin/elevation-a.jpg" alt="The Brechtin — Elevation A">
-          <img class="macc-render-img" data-elev="b" src="images/models/brechtin/elevation-b.jpg" alt="The Brechtin — Elevation B">
+          <img class="macc-render-img active" data-elev="a" src="images/models/brechtin/elevation-a.jpg" alt="The Brechin — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/brechtin/elevation-b.jpg" alt="The Brechin — Elevation B">
         </div>
 
         <!-- Elevation A/B selector buttons -->
@@ -565,12 +566,12 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 
         <!-- Single floorplan image (combined A & B) -->
         <div class="macc-fp-single">
-          <img src="images/models/brechtin/floorplan-a.jpg" alt="The Brechtin — Full Floorplan">
+          <img src="images/models/brechtin/floorplan-a.jpg" alt="The Brechin — Full Floorplan">
         </div>
 
         <!-- CTA ROW -->
         <div class="macc-cta">
-          <p>Interested in The Brechtin? Download the brochure or request a private consultation.</p>
+          <p>Interested in The Brechin? Download the brochure or request a private consultation.</p>
           <div class="macc-cta-buttons">
             <a href="contact.html" class="btn-gold">Request Info</a>
             <a href="#" class="btn-ghost">Download Brochure</a>
@@ -1058,5 +1059,6 @@ window.addEventListener('scroll',function(){var n=document.getElementById('main-
 
 </script>
 
+<script src="mobile-menu.js"></script>
 </body>
 </html>
