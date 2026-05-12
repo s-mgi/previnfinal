@@ -356,7 +356,10 @@
   
   /* ─── TESTIMONIALS ─── */
   .testimonials {
-    padding: 56px 20px !important;
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
   }
   
   .testi-card {
@@ -364,7 +367,26 @@
   }
   
   .testi-img {
-    height: 280px !important;
+    height: 320px !important;
+    min-height: 320px !important;
+    max-height: 400px !important;
+    width: 100% !important;
+  }
+  
+  .testi-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  
+  .testi-right {
+    padding: 48px 24px !important;
+    width: 100% !important;
+  }
+  
+  .testi-right h2 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+    margin-bottom: 28px !important;
   }
   
   .testi-content {
@@ -373,21 +395,24 @@
   
   .testi-quote {
     font-size: 0.88rem !important;
-    line-height: 1.9 !important;
+    line-height: 1.8 !important;
     max-width: 100% !important;
+    margin-bottom: 24px !important;
   }
   
   .testi-author {
-    font-size: 0.8rem !important;
+    font-size: 1.8rem !important;
   }
   
   .testi-nav {
-    padding: 0 8px !important;
+    padding: 0 16px !important;
   }
   
+  .testi-nav-btn,
   .testi-nav button {
-    width: 36px !important;
-    height: 36px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.5rem !important;
   }
   
   /* ─── FOOTER ─── */
@@ -583,20 +608,77 @@
     padding: 40px 24px !important;
   }
   
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-    font-size: 0.9rem !important;
-    padding: 14px 16px !important;
+  /* CRITICAL: Override inline styles on contact page */
+  section[style*="padding:52px 80px"],
+  section[style*="padding: 52px 80px"] {
+    padding: 40px 20px !important;
   }
   
-  .contact-form textarea {
+  /* Contact info cards - force vertical stack */
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns: repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(3, 1fr)"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Form + hours 2-column layout - force vertical stack */
+  div[style*="grid-template-columns:1fr 1fr"][style*="gap:60px"],
+  div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 60px"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* First name / Last name grid - force vertical stack */
+  div[style*="grid-template-columns:1fr 1fr"][style*="gap:14px"],
+  div[style*="grid-template-columns: 1fr 1fr"][style*="gap: 14px"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    grid-template-columns: 1fr !important;
+  }
+  
+  .ci-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select,
+  form input,
+  form textarea,
+  form select {
+    font-size: 16px !important;
+    padding: 14px 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  .contact-form textarea,
+  textarea[name="message"],
+  form textarea {
     min-height: 140px !important;
   }
   
-  .form-submit {
+  .form-submit,
+  button[type="submit"],
+  form button[type="submit"] {
     font-size: 0.68rem !important;
     padding: 15px 36px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   .contact-info h3 {
