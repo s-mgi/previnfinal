@@ -202,6 +202,9 @@ body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background
 .macc-elev-btn.active .macc-elev-btn-sqft{color:var(--gold-lt)}
 .macc-fp-single{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden}
 .macc-fp-single img{width:100%;height:auto;display:block}
+.macc-fp-wrap{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden;position:relative}
+.macc-fp-img{width:100%;height:auto;display:none}
+.macc-fp-img.active{display:block}
 
 /* CTA row at bottom of accordion */
 .macc-cta{margin-top:48px;padding-top:32px;border-top:1px solid rgba(28,43,66,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -344,6 +347,80 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 
 <div id="page-preloader">
   <div class="prl-logo">PREVIN <span>COURT</span></div>
+
+  <!-- MODEL: Aberdeen -->
+  <div class="model-acc" id="acc-aberdeen" data-model="aberdeen" data-name="Aberdeen" data-type="two-storey" data-meta="2,969 sqft · 5 bed · 4 bath · Two-Storey">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Aberdeen</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Estate Two-Storey</span>
+          <span><strong>2,969</strong>sqft</span>
+          <span><strong>5</strong>bed</span>
+          <span><strong>4</strong>bath</span>
+          <span><strong>2</strong>car</span>
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+        <div class="macc-info-full">
+            <h3>The <em>Aberdeen</em></h3>
+            <p class="macc-desc">The pinnacle of the 40-foot collection. With five bedrooms, four bathrooms, and nearly 3,000 square feet, the Aberdeen is designed for multi-generational living with separate living zones and flexible spaces. Available in Front Load and Side Load configurations.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">2,969</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">5</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Storeys</span></div>
+            </div>
+        </div>
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior & Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Variant</em></h4>
+          </div>
+        </div>
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="front-a" src="images/models/aberdeen/elevation-front-a.jpg" alt="The Aberdeen — Front Facade, Elevation A">
+          <img class="macc-render-img" data-elev="front-b" src="images/models/aberdeen/elevation-front-b.jpg" alt="The Aberdeen — Front Facade, Elevation B">
+          <img class="macc-render-img" data-elev="side-a" src="images/models/aberdeen/elevation-side-a.jpg" alt="The Aberdeen — Side Facade, Elevation A">
+          <img class="macc-render-img" data-elev="side-b" src="images/models/aberdeen/elevation-side-b.jpg" alt="The Aberdeen — Side Facade, Elevation B">
+        </div>
+        <div class="macc-elev-buttons macc-elev-buttons-4" role="tablist" aria-label="Facade and elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="front-a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Front · Elev. A</span>
+            <span class="macc-elev-btn-sqft">2,969 sq ft · CP#10</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="front-b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Front · Elev. B</span>
+            <span class="macc-elev-btn-sqft">2,969 sq ft · CP#12</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="side-a" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Side · Elev. A</span>
+            <span class="macc-elev-btn-sqft">2,969 sq ft · CP#10</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="side-b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Side · Elev. B</span>
+            <span class="macc-elev-btn-sqft">2,969 sq ft · CP#12</span>
+          </button>
+        </div>
+        <div class="macc-fp-wrap">
+          <img class="macc-fp-img active" data-elev="a" src="images/models/aberdeen/floorplan-a.jpg" alt="The Aberdeen — Elevation A Floorplan">
+          <img class="macc-fp-img" data-elev="b" src="images/models/aberdeen/floorplan-b.jpg" alt="The Aberdeen — Elevation B Floorplan">
+        </div>
+        <div class="macc-cta">
+          <p>Interested in The Aberdeen? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="#" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="prl-track"><div class="prl-fill"></div></div>
   <div class="prl-sub">Crafting Excellence</div>
 </div>
@@ -404,7 +481,24 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
     <h2 class="mgs-h2">Choose Your <em>Model</em></h2>
   </div>
   <div class="mgs-grid">
-    <button type="button" class="mgs-card rv vis" data-target="acc-dundee">
+        <button type="button" class="mgs-card rv d1 vis" data-target="acc-sterling">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Two-Storey · 2,600 sqft</span>
+        <img src="images/models/sterling/elevation-a.jpg" alt="The Sterling">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Sterling</em></h3>
+        <span class="mgs-card-tag">Premium Two-Storey</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>2,600</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>3</strong>bath</span>
+          <span class="mgs-card-meta-item"><strong>2</strong>car</span>
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+<button type="button" class="mgs-card rv vis" data-target="acc-dundee">
       <div class="mgs-card-img">
         <span class="mgs-card-badge">Two-Storey · 2,700 sqft</span>
         <img src="images/models/dundee/elevation-a.jpg" alt="The Dundee">
@@ -489,6 +583,24 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
         <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </button>
+    <button type="button" class="mgs-card rv d7 vis" data-target="acc-aberdeen">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Two-Storey · 2,969 sqft</span>
+        <img src="images/models/aberdeen/elevation-front-a.jpg" alt="The Aberdeen">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Aberdeen</em></h3>
+        <span class="mgs-card-tag">Estate Two-Storey</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>2,969</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>5</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bath</span>
+          <span class="mgs-card-meta-item"><strong>2</strong>car</span>
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+
   </div>
 </section>
 
@@ -505,6 +617,68 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
 <section class="model-stack">
 
   <!-- MODEL: Dundee -->
+    <!-- MODEL: Sterling -->
+  <div class="model-acc" id="acc-sterling" data-model="sterling" data-name="Sterling" data-type="two-storey" data-meta="2,600 sqft · 4 bed · 3 bath · Two-Storey">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Sterling</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Premium Two-Storey</span>
+          <span><strong>2,600</strong>sqft</span>
+          <span><strong>4</strong>bed</span>
+          <span><strong>3</strong>bath</span>
+          <span><strong>2</strong>car</span>
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+        <div class="macc-info-full">
+            <h3>The <em>Sterling</em></h3>
+            <p class="macc-desc">An elegant executive home with a commanding presence. The Sterling offers four bedrooms including a luxurious primary suite, a chef-inspired kitchen, and a two-car garage.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">2,600</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">3</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Storeys</span></div>
+            </div>
+        </div>
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior & Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/sterling/elevation-a.jpg" alt="The Sterling — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/sterling/elevation-b.jpg" alt="The Sterling — Elevation B">
+        </div>
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">2,600 sq ft · CP#3</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">2,600 sq ft · CP#2</span>
+          </button>
+        </div>
+        <div class="macc-fp-single">
+          <img src="images/models/sterling/floorplan-a.jpg" alt="The Sterling — Full Floorplan">
+        </div>
+        <div class="macc-cta">
+          <p>Interested in The Sterling? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="#" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="model-acc" id="acc-dundee" data-model="dundee" data-name="Dundee" data-type="two-storey" data-meta="2,700 sqft · 4 bed · 3 bath · Two-Storey">
     <button type="button" class="model-acc-header" aria-expanded="false">
       <div class="model-acc-left">
@@ -1045,12 +1219,16 @@ window.addEventListener('scroll',function(){var n=document.getElementById('main-
   document.querySelectorAll('.model-acc').forEach(function(acc){
     var btns=acc.querySelectorAll('.macc-elev-btn');
     var renders=acc.querySelectorAll('.macc-render-img');
+    var floorplans=acc.querySelectorAll('.macc-fp-img');
     btns.forEach(function(b){
       b.addEventListener('click',function(){
         btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
         b.classList.add('active');b.setAttribute('aria-selected','true');
         var elev=b.dataset.elev;
         renders.forEach(function(r){r.classList.toggle('active',r.dataset.elev===elev);});
+        /* Switch floorplans - extract base elevation (a/b) from variants like front-a, side-b */
+        var baseElev=elev.includes('-')?elev.split('-')[1]:elev;
+        floorplans.forEach(function(f){f.classList.toggle('active',f.dataset.elev===baseElev);});
       });
     });
   });
@@ -1061,3 +1239,4 @@ window.addEventListener('scroll',function(){var n=document.getElementById('main-
 <script src="mobile-menu.js"></script>
 </body>
 </html>
+<!-- ═══ SITE PLAN [will be inserted before this] ═══ -->

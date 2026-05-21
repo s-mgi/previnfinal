@@ -206,6 +206,9 @@ body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background
 .macc-elev-btn.active .macc-elev-btn-sqft{color:var(--gold-lt)}
 .macc-fp-single{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden}
 .macc-fp-single img{width:100%;height:auto;display:block}
+.macc-fp-wrap{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden;position:relative}
+.macc-fp-img{width:100%;height:auto;display:none}
+.macc-fp-img.active{display:block}
 
 /* CTA row at bottom of accordion */
 .macc-cta{margin-top:48px;padding-top:32px;border-top:1px solid rgba(28,43,66,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -460,7 +463,24 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
         <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       </div>
     </button>
-    <button type="button" class="mgs-card rv d1 vis" data-target="acc-tobermory">
+        <button type="button" class="mgs-card rv d4 vis" data-target="acc-glasgow">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Two-Storey · 2,177 sqft</span>
+        <img src="images/models/glasgow/elevation-a.jpg" alt="The Glasgow">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Glasgow</em></h3>
+        <span class="mgs-card-tag">Executive Two-Storey</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>2,177</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>2.5</strong>bath</span>
+          <span class="mgs-card-meta-item"><strong>1</strong>car</span>
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+<button type="button" class="mgs-card rv d1 vis" data-target="acc-tobermory">
       <div class="mgs-card-img">
         <span class="mgs-card-badge">Two-Storey · 2,274 sqft</span>
         <img src="images/models/tobermory/elevation-a.jpg" alt="The Tobermory">
@@ -729,6 +749,82 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
   </div>
 
   <!-- MODEL: Tobermory -->
+  
+  <!-- MODEL: Glasgow -->
+  <div class="model-acc" id="acc-glasgow" data-model="glasgow" data-name="Glasgow" data-type="two-storey" data-meta="2,177 sqft · 4 bed · 2.5 bath · Two-Storey">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Glasgow</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Executive Two-Storey</span>
+          <span><strong>2,177</strong>sqft</span>
+          <span><strong>4</strong>bed</span>
+          <span><strong>2.5</strong>bath</span>
+          <span><strong>1</strong>car</span>
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+
+        <!-- TOP: hero render + info -->
+        <div class="macc-info-full">
+            <h3>The <em>Glasgow</em></h3>
+            <p class="macc-desc">A refined two-storey design that maximizes space and natural light. The Glasgow features an open-concept main floor with a dedicated home office, four generous bedrooms upstairs, and thoughtful storage throughout.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">2,177</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2.5</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Storeys</span></div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR + FLOORPLAN -->
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior & Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+
+        <!-- Active exterior render -->
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/glasgow/elevation-a.jpg" alt="The Glasgow — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/glasgow/elevation-b.jpg" alt="The Glasgow — Elevation B">
+        </div>
+
+        <!-- Elevation A/B selector buttons -->
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">2,177 sq ft · CP#7</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">2,177 sq ft · CP#11</span>
+          </button>
+        </div>
+
+        <!-- Floorplan image -->
+        <div class="macc-fp-single">
+          <img src="images/models/glasgow/floorplan-a.jpg" alt="The Glasgow — Full Floorplan">
+        </div>
+
+        <!-- CTA ROW -->
+        <div class="macc-cta">
+          <p>Interested in The Glasgow? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="#" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
   <div class="model-acc" id="acc-tobermory" data-model="tobermory" data-name="Tobermory" data-type="two-storey" data-meta="2,274 sqft · 4 bed · 3 bath · Two-Storey">
     <button type="button" class="model-acc-header" aria-expanded="false">
       <div class="model-acc-left">
@@ -866,9 +962,10 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
           </button>
         </div>
 
-        <!-- Single floorplan image -->
-        <div class="macc-fp-single">
-          <img src="images/models/elgin/floorplan-a.jpg" alt="The Elgin — Full Floorplan">
+        <!-- Switchable floorplan images -->
+        <div class="macc-fp-wrap">
+          <img class="macc-fp-img active" data-elev="a" src="images/models/elgin/floorplan-a.jpg" alt="The Elgin — Elevation A Floorplan">
+          <img class="macc-fp-img" data-elev="b" src="images/models/elgin/floorplan-b.jpg" alt="The Elgin — Elevation B Floorplan">
         </div>
 
         <!-- CTA ROW -->
@@ -1046,12 +1143,16 @@ window.addEventListener('scroll',function(){var n=document.getElementById('main-
   document.querySelectorAll('.model-acc').forEach(function(acc){
     var btns=acc.querySelectorAll('.macc-elev-btn');
     var renders=acc.querySelectorAll('.macc-render-img');
+    var floorplans=acc.querySelectorAll('.macc-fp-img');
     btns.forEach(function(b){
       b.addEventListener('click',function(){
         btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
         b.classList.add('active');b.setAttribute('aria-selected','true');
         var elev=b.dataset.elev;
         renders.forEach(function(r){r.classList.toggle('active',r.dataset.elev===elev);});
+        /* Switch floorplans - extract base elevation (a/b) from variants like front-a, side-b */
+        var baseElev=elev.includes('-')?elev.split('-')[1]:elev;
+        floorplans.forEach(function(f){f.classList.toggle('active',f.dataset.elev===baseElev);});
       });
     });
   });

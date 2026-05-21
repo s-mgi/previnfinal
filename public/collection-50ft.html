@@ -202,6 +202,9 @@ body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background
 .macc-elev-btn.active .macc-elev-btn-sqft{color:var(--gold-lt)}
 .macc-fp-single{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden}
 .macc-fp-single img{width:100%;height:auto;display:block}
+.macc-fp-wrap{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden;position:relative}
+.macc-fp-img{width:100%;height:auto;display:none}
+.macc-fp-img.active{display:block}
 
 /* CTA row at bottom of accordion */
 .macc-cta{margin-top:48px;padding-top:32px;border-top:1px solid rgba(28,43,66,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
@@ -1045,12 +1048,16 @@ window.addEventListener('scroll',function(){var n=document.getElementById('main-
   document.querySelectorAll('.model-acc').forEach(function(acc){
     var btns=acc.querySelectorAll('.macc-elev-btn');
     var renders=acc.querySelectorAll('.macc-render-img');
+    var floorplans=acc.querySelectorAll('.macc-fp-img');
     btns.forEach(function(b){
       b.addEventListener('click',function(){
         btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
         b.classList.add('active');b.setAttribute('aria-selected','true');
         var elev=b.dataset.elev;
         renders.forEach(function(r){r.classList.toggle('active',r.dataset.elev===elev);});
+        /* Switch floorplans - extract base elevation (a/b) from variants like front-a, side-b */
+        var baseElev=elev.includes('-')?elev.split('-')[1]:elev;
+        floorplans.forEach(function(f){f.classList.toggle('active',f.dataset.elev===baseElev);});
       });
     });
   });
