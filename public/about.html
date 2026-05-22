@@ -464,6 +464,80 @@ footer{background:var(--navy);padding:52px 60px 40px;display:grid;grid-template-
 
 
 
+
+/* ═══ EXPERIENCE TIMELINE DESIGN ═══ */
+.experience-timeline{max-width:1100px;margin:0 auto;padding:0 40px;position:relative}
+.experience-timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);transform:translateX(-50%)}
+.exp-item{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-bottom:80px;position:relative}
+.exp-item:nth-child(even) .exp-content{order:2}
+.exp-item:nth-child(even) .exp-visual{order:1}
+.exp-number-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:var(--navy);border:4px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold);z-index:10;box-shadow:0 8px 24px rgba(28,43,66,.3)}
+.exp-content{background:#fff;padding:48px;box-shadow:0 8px 32px rgba(28,43,66,.08);border-left:4px solid var(--gold);position:relative}
+.exp-content::before{content:'';position:absolute;left:-8px;top:50%;width:16px;height:16px;background:var(--gold);border-radius:50%;transform:translateY(-50%)}
+.exp-heading{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:var(--navy);margin-bottom:20px;line-height:1.2}
+.exp-description{font-size:1rem;line-height:1.85;color:#4a5568;margin-bottom:32px}
+.exp-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--gold);color:#fff;text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:all .3s;box-shadow:0 4px 12px rgba(184,149,46,.3)}
+.exp-cta:hover{background:var(--navy);box-shadow:0 6px 20px rgba(28,43,66,.4);transform:translateY(-2px)}
+.exp-visual{background:var(--cream);padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:320px}
+.exp-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(184,149,46,.08),transparent 70%)}
+.exp-icon-wrap{font-size:6rem;opacity:.15;color:var(--gold)}
+.exp-features{margin-top:24px;display:flex;flex-direction:column;gap:12px;width:100%}
+.exp-feature{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.6);border-radius:4px}
+.exp-feature-icon{width:8px;height:8px;background:var(--gold);border-radius:50%}
+.exp-feature-text{font-size:.85rem;color:var(--navy);font-weight:500}
+@media(max-width:968px){
+  .experience-timeline::before{left:20px}
+  .exp-item{grid-template-columns:1fr;gap:0;margin-bottom:60px}
+  .exp-item:nth-child(even) .exp-content{order:1}
+  .exp-item:nth-child(even) .exp-visual{order:2}
+  .exp-number-badge{left:20px;top:0;transform:translate(0,0);width:60px;height:60px;font-size:1.4rem}
+  .exp-content{margin-left:40px;padding:32px 24px;border-left:2px solid var(--gold)}
+  .exp-content::before{left:-6px;width:12px;height:12px}
+  .exp-visual{min-height:240px;margin-left:40px;margin-top:20px;padding:32px}
+  .exp-heading{font-size:1.6rem}
+  .exp-description{font-size:.92rem}
+  .experience-timeline{padding:0 20px}
+}
+  .experience-row:nth-child(even){direction:ltr}
+  .exp-content{padding:20px 0}
+  .exp-number{font-size:4rem}
+  .exp-title{font-size:1.6rem}
+  .exp-text{font-size:.92rem}
+  .exp-visual{min-height:280px;padding:36px}
+  .experience-section{padding:0 24px}
+}
+  .exp-card{padding:36px 28px}
+  .exp-card-number{font-size:3rem;top:24px;right:24px}
+  .exp-card-title{font-size:1.3rem}
+  .exp-card-text{font-size:.88rem;margin-bottom:20px}
+}
+
+
+/* ═══ MODERN EXPERIENCE SECTION ═══ */
+.experience-modern{background:linear-gradient(135deg,#f0ede6 0%,#fff 100%);padding:96px 40px;margin-top:80px}
+.exp-modern-container{max-width:1200px;margin:0 auto}
+.exp-modern-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:600;color:var(--navy);text-align:center;margin-bottom:12px}
+.exp-modern-subtitle{text-align:center;font-size:1.05rem;color:var(--muted);margin-bottom:64px}
+.exp-modern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:stretch}
+.exp-modern-card{background:#fff;padding:48px 40px;box-shadow:0 8px 32px rgba(28,43,66,.1);position:relative;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;height:100%}
+.exp-modern-card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(28,43,66,.18)}
+.exp-modern-number{position:absolute;top:32px;right:32px;font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;color:rgba(184,149,46,.06);line-height:1}
+.exp-modern-heading{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:20px;position:relative;z-index:2}
+.exp-modern-line{width:60px;height:3px;background:var(--gold);margin-bottom:24px}
+.exp-modern-text{font-size:.96rem;line-height:1.85;color:#4a5568;margin-bottom:32px;flex-grow:1}
+.exp-modern-link{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:4px;transition:color .3s,border-color .3s;margin-top:auto}
+.exp-modern-link:hover{color:var(--navy);border-color:var(--navy)}
+@media(max-width:968px){
+  .experience-modern{padding:72px 24px}
+  .exp-modern-title{font-size:2rem}
+  .exp-modern-subtitle{font-size:.95rem;margin-bottom:48px}
+  .exp-modern-grid{grid-template-columns:1fr;gap:32px}
+  .exp-modern-card{padding:40px 32px}
+  .exp-modern-number{font-size:4rem;top:24px;right:24px}
+  .exp-modern-heading{font-size:1.5rem}
+  .exp-modern-text{font-size:.92rem}
+}
+
 </style>
 <style>
 /* ── VISIBLE GOLD CURSOR ── */
@@ -615,71 +689,41 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
   </div>
 </div>
 <!-- ═══ EXPERIENCE ═══ -->
-<section class="experience" id="about">
-  <h2 class="rv vis">The Previn Court Experience</h2>
-  <div class="exp-grid vis">
+<section class="experience-modern" id="about">
+  <div class="exp-modern-container">
+    <h2 class="exp-modern-title rv vis">The Previn Court Experience</h2>
+    <p class="exp-modern-subtitle rv vis">Three pillars that define how we build</p>
+    
+    <div class="exp-modern-grid">
+      
+      <!-- Card 1 -->
+      <div class="exp-modern-card rv d1 vis">
+        <div class="exp-modern-number">01</div>
+        <h3 class="exp-modern-heading">A Personalized Approach</h3>
+        <div class="exp-modern-line"></div>
+        <p class="exp-modern-text">We believe that building a home should be a collaborative journey, not a transaction. From your first consultation to final walkthrough, you'll work directly with our experienced design team to bring your vision to life. Every detail — from floorplan modifications to finish selections — is thoughtfully considered and tailored to how you live. We take the time to understand your lifestyle, priorities, and budget, ensuring each decision reflects what matters most to you and your family. With unlimited design consultations and dedicated support throughout the build process, you're never navigating this alone.</p>
+        <a href="contact.html" class="exp-modern-link">Schedule a Consultation →</a>
+      </div>
 
-    <div class="exp-col rv d1 vis">
-      <div class="exp-top">
-        <svg class="exp-icon" viewBox="0 0 46 46" fill="none" stroke="#c9a84c" stroke-width="1.5">
-          <rect x="5" y="14" width="14" height="27" rx="1"></rect><rect x="27" y="14" width="14" height="27" rx="1"></rect>
-          <path d="M5 14A12 12 0 0 1 41 14" fill="none"></path>
-          <line x1="23" y1="2" x2="23" y2="14" stroke-width="1.3"></line>
-          <rect x="10" y="19" width="6" height="6" rx=".5" stroke-width="1.1"></rect>
-          <rect x="30" y="19" width="6" height="6" rx=".5" stroke-width="1.1"></rect>
-          <rect x="10" y="29" width="6" height="6" rx=".5" stroke-width="1.1"></rect>
-          <rect x="30" y="29" width="6" height="6" rx=".5" stroke-width="1.1"></rect>
-        </svg>
-        <h3 class="exp-title">A Personalized Approach</h3>
+      <!-- Card 2 -->
+      <div class="exp-modern-card rv d2 vis">
+        <div class="exp-modern-number">02</div>
+        <h3 class="exp-modern-heading">Built With Precision</h3>
+        <div class="exp-modern-line"></div>
+        <p class="exp-modern-text">Quality isn't just a promise — it's built into every square foot. Our construction teams bring decades of combined experience to each project, working exclusively with licensed trades we've partnered with for years. We maintain rigorous quality control standards at every phase: foundation inspections, framing reviews, mechanical installations, and finishing work. Each home undergoes multiple third-party inspections beyond municipal requirements, and we conduct our own comprehensive pre-delivery walkthrough to ensure everything meets our exacting standards. From engineered structural systems to premium building materials, we never compromise on what goes into your home.</p>
+        <a href="models.html" class="exp-modern-link">Explore Our Models →</a>
       </div>
-      <div class="exp-body">
-        <div class="exp-vbar"></div>
-        <div class="exp-right">
-          <p class="exp-text">We believe that building a home should be a collaborative journey, not a transaction. From your first consultation to final walkthrough, you'll work directly with our experienced design team to bring your vision to life. Every detail — from floorplan modifications to finish selections — is thoughtfully considered and tailored to how you live. We take the time to understand your lifestyle, priorities, and budget, ensuring each decision reflects what matters most to you and your family. With unlimited design consultations and dedicated support throughout the build process, you're never navigating this alone.</p>
-          <a href="contact.html" class="exp-link">Schedule a Consultation →</a>
-        </div>
+
+      <!-- Card 3 -->
+      <div class="exp-modern-card rv d3 vis">
+        <div class="exp-modern-number">03</div>
+        <h3 class="exp-modern-heading">Guided Every Step Of The Way</h3>
+        <div class="exp-modern-line"></div>
+        <p class="exp-modern-text">Building a home can feel overwhelming — that's why we've designed our process to be transparent, organized, and stress-free. You'll receive a dedicated project coordinator who becomes your single point of contact throughout construction, providing regular progress updates, timeline reviews, and answers to any questions. Our client portal gives you 24/7 access to build schedules, selection deadlines, and document management. We walk you through financing options, warranty coverage, and Tarion enrollment, ensuring nothing is left to chance. From pre-construction meetings to your final orientation, we're with you every step — making sure you feel confident, informed, and excited about your new home.</p>
+        <a href="contact.html" class="exp-modern-link">Get Started Today →</a>
       </div>
+
     </div>
-
-    <div class="exp-col rv d2 vis">
-      <div class="exp-top">
-        <svg class="exp-icon" viewBox="0 0 46 46" fill="none" stroke="#c9a84c" stroke-width="1.5">
-          <rect x="12" y="8" width="22" height="16" rx="2"></rect><circle cx="23" cy="16" r="3" stroke-width="1.2"></circle>
-          <line x1="23" y1="24" x2="23" y2="30"></line><line x1="14" y1="30" x2="32" y2="30"></line>
-          <line x1="14" y1="30" x2="11" y2="38"></line><line x1="32" y1="30" x2="35" y2="38"></line>
-          <line x1="19" y1="30" x2="19" y2="38"></line><line x1="27" y1="30" x2="27" y2="38"></line>
-        </svg>
-        <h3 class="exp-title">Built With Precision</h3>
-      </div>
-      <div class="exp-body">
-        <div class="exp-vbar"></div>
-        <div class="exp-right">
-          <p class="exp-text">Quality isn't just a promise — it's built into every square foot. Our construction teams bring decades of combined experience to each project, working exclusively with licensed trades we've partnered with for years. We maintain rigorous quality control standards at every phase: foundation inspections, framing reviews, mechanical installations, and finishing work. Each home undergoes multiple third-party inspections beyond municipal requirements, and we conduct our own comprehensive pre-delivery walkthrough to ensure everything meets our exacting standards. From engineered structural systems to premium building materials, we never compromise on what goes into your home.</p>
-          <a href="models.html" class="exp-link">Explore Our Models →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-col rv d3 vis">
-      <div class="exp-top">
-        <svg class="exp-icon" viewBox="0 0 46 46" fill="none" stroke="#c9a84c" stroke-width="1.5">
-          <rect x="3" y="38" width="40" height="4" rx="1"></rect><rect x="3" y="9" width="40" height="4" rx="1"></rect>
-          <rect x="7" y="13" width="6" height="25" rx=".5"></rect>
-          <rect x="20" y="13" width="6" height="25" rx=".5"></rect>
-          <rect x="33" y="13" width="6" height="25" rx=".5"></rect>
-          <path d="M10 9L13 5L33 5L36 9" fill="none" stroke-width="1.2"></path>
-        </svg>
-        <h3 class="exp-title">Guided Every Step Of The Way</h3>
-      </div>
-      <div class="exp-body">
-        <div class="exp-vbar"></div>
-        <div class="exp-right">
-          <p class="exp-text">Building a home can feel overwhelming — that's why we've designed our process to be transparent, organized, and stress-free. You'll receive a dedicated project coordinator who becomes your single point of contact throughout construction, providing regular progress updates, timeline reviews, and answers to any questions. Our client portal gives you 24/7 access to build schedules, selection deadlines, and document management. We walk you through financing options, warranty coverage, and Tarion enrollment, ensuring nothing is left to chance. From pre-construction meetings to your final orientation, we're with you every step — making sure you feel confident, informed, and excited about your new home.</p>
-          <a href="contact.html" class="exp-link">Get Started Today →</a>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
