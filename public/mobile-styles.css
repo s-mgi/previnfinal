@@ -1103,3 +1103,71 @@
     width: 100% !important;
   }
 }
+
+/* ═══════════════════════════════════════
+   PG-SECTION (Who We Are, etc) - MOBILE
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .pg-2col {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  
+  .rv-l, .rv-r {
+    width: 100% !important;
+  }
+  
+  .pg-img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 400px !important;
+    object-fit: cover !important;
+  }
+  
+  .pg-h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .pg-eyebrow {
+    font-size: 0.62rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .pg-divider {
+    margin: 20px 0 !important;
+  }
+  
+  .pg-p {
+    font-size: 0.9rem !important;
+    line-height: 1.8 !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .pg-feat {
+    margin-bottom: 20px !important;
+    gap: 12px !important;
+  }
+  
+  .pg-feat h4 {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .pg-feat p {
+    font-size: 0.85rem !important;
+    line-height: 1.7 !important;
+  }
+  
+  .pg-feat-dot {
+    width: 10px !important;
+    height: 10px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .pg-cta {
+    font-size: 0.7rem !important;
+    padding: 12px 28px !important;
+  }
+}
