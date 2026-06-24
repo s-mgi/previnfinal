@@ -464,6 +464,13 @@ footer{background:var(--navy);padding:52px 60px 40px;display:grid;grid-template-
 
 
 
+
+/* ── 13" / mid-range desktop ── */
+@media(min-width:769px) and (max-width:1440px){
+  .pg-section{padding:60px 60px}
+  .pg-2col{gap:48px}
+  .experience-modern,.exp-modern-container{padding-left:60px;padding-right:60px}
+}
 </style>
 <style>
 /* ── VISIBLE GOLD CURSOR ── */
@@ -623,17 +630,17 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
       <div class="ci-card">
         <div class="ci-icon">&#128205;</div>
         <h4>Sales Centre</h4>
-        <p>123 Name Street<br>City, Ontario, A1B 2C3</p>
+        <p>212 Walker Boulevard<br>Alliston, Ontario</p>
       </div>
       <div class="ci-card">
         <div class="ci-icon">&#128222;</div>
         <h4>Phone</h4>
-        <p>123-456-7890<br>Mon&#8211;Sat 10am&#8211;6pm</p>
+        <p>705-434-0255</p>
       </div>
       <div class="ci-card">
         <div class="ci-icon">&#9993;</div>
         <h4>Email</h4>
-        <p>info@previncourt.com<br>We reply within 24 hours</p>
+        <p>sales@previncourt.com</p>
       </div>
     </div>
 
@@ -702,35 +709,33 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
         <div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)">
             <span style="font-size:var(--fs-body);color:rgba(255,255,255,.5)">Monday &#8211; Wednesday</span>
-            <span style="font-size:var(--fs-body);color:#fff;font-weight:600">10:00 AM &#8211; 7:00 PM</span>
+            <span style="font-size:var(--fs-body);color:#fff;font-weight:600">11:00 AM &#8211; 5:00 PM</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)">
             <span style="font-size:var(--fs-body);color:rgba(255,255,255,.5)">Thursday &#8211; Friday</span>
             <span style="font-size:var(--fs-body);color:#fff;font-weight:600">Closed</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)">
-            <span style="font-size:var(--fs-body);color:rgba(255,255,255,.5)">Saturday, Sunday &amp; Holidays</span>
-            <span style="font-size:var(--fs-body);color:#fff;font-weight:600">10:00 AM &#8211; 5:00 PM</span>
+            <span style="font-size:var(--fs-body);color:rgba(255,255,255,.5)">Saturday &amp; Sunday</span>
+            <span style="font-size:var(--fs-body);color:#fff;font-weight:600">12:00 PM &#8211; 5:00 PM</span>
           </div>
         </div>
 
-        <div style="margin-top:32px;padding:24px;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2)">
-          <p style="font-size:var(--fs-body);color:rgba(255,255,255,.58);line-height:1.82">Private appointments available outside regular hours. Contact our sales team to arrange a personalized walkthrough.</p>
-        </div>
+        <div style="margin-top:32px"></div>
 
         <div style="margin-top:28px;display:flex;flex-direction:column;gap:12px">
-          <a href="tel:1234567890" style="display:flex;align-items:center;gap:16px;text-decoration:none;padding:16px 20px;border:1px solid rgba(255,255,255,.12);transition:border-color .2s">
+          <a href="tel:7054340255" style="display:flex;align-items:center;gap:16px;text-decoration:none;padding:16px 20px;border:1px solid rgba(255,255,255,.12);transition:border-color .2s">
             <span style="font-size:var(--fs-h2);line-height:1">&#128222;</span>
             <div>
               <div style="font-size:var(--fs-micro);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#c9a84c;margin-bottom:3px">Call Us Directly</div>
-              <div style="font-size:var(--fs-body);color:#fff;font-weight:600">123-456-7890</div>
+              <div style="font-size:var(--fs-body);color:#fff;font-weight:600">705-434-0255</div>
             </div>
           </a>
-          <a href="mailto:info@previncourt.com" style="display:flex;align-items:center;gap:16px;text-decoration:none;padding:16px 20px;border:1px solid rgba(255,255,255,.12);transition:border-color .2s">
+          <a href="mailto:sales@previncourt.com" style="display:flex;align-items:center;gap:16px;text-decoration:none;padding:16px 20px;border:1px solid rgba(255,255,255,.12);transition:border-color .2s">
             <span style="font-size:var(--fs-h2);line-height:1">&#9993;</span>
             <div>
               <div style="font-size:var(--fs-micro);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#c9a84c;margin-bottom:3px">Email Us</div>
-              <div style="font-size:var(--fs-body);color:#fff;font-weight:600">info@previncourt.com</div>
+              <div style="font-size:var(--fs-body);color:#fff;font-weight:600">sales@previncourt.com</div>
             </div>
           </a>
         </div>
@@ -819,9 +824,9 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
     <div class="foot-copy">©2026 Previn Court Homes.</div>
   </div>
   <div class="foot-addr rv d3 vis">
-    <span>123 NAME STREET,</span>
-    <span>CITY, ONTARIO, A1B 2C3</span>
-    <span class="phone">123-456-7890</span>
+    <span>212 WALKER BOULEVARD,</span>
+    <span>ALLISTON, ONTARIO</span>
+    <span class="phone">705-434-0255</span>
   </div>
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
