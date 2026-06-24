@@ -47,11 +47,6 @@ body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background
   --page-bg:#efefed;
   --muted:#8a9bb4;
   --lt:#c5cfd9;
-  --fs-display:3.5rem;
-  --fs-h1:2rem;
-  --fs-h2:1.25rem;
-  --fs-body:1rem;
-  --fs-micro:.7rem;
 }
 
 /* ═══════════════════════════════════════
@@ -474,8 +469,8 @@ footer{background:var(--navy);padding:52px 60px 40px;display:grid;grid-template-
 .exp-number-badge{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:80px;background:var(--navy);border:4px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold);z-index:10;box-shadow:0 8px 24px rgba(28,43,66,.3)}
 .exp-content{background:#fff;padding:48px;box-shadow:0 8px 32px rgba(28,43,66,.08);border-left:4px solid var(--gold);position:relative}
 .exp-content::before{content:'';position:absolute;left:-8px;top:50%;width:16px;height:16px;background:var(--gold);border-radius:50%;transform:translateY(-50%)}
-.exp-heading{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:var(--navy);margin-bottom:20px;line-height:1.2}
-.exp-description{font-size:1rem;line-height:1.85;color:#4a5568;margin-bottom:32px}
+.exp-heading{font-family:'Playfair Display',serif;font-size:var(--fs-h1);font-weight:600;color:var(--navy);margin-bottom:20px;line-height:1.2}
+.exp-description{font-size:var(--fs-body);line-height:1.85;color:#4a5568;margin-bottom:32px}
 .exp-cta{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--gold);color:#fff;text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;transition:all .3s;box-shadow:0 4px 12px rgba(184,149,46,.3)}
 .exp-cta:hover{background:var(--navy);box-shadow:0 6px 20px rgba(28,43,66,.4);transform:translateY(-2px)}
 .exp-visual{background:var(--cream);padding:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:320px}
@@ -484,7 +479,7 @@ footer{background:var(--navy);padding:52px 60px 40px;display:grid;grid-template-
 .exp-features{margin-top:24px;display:flex;flex-direction:column;gap:12px;width:100%}
 .exp-feature{display:flex;align-items:center;gap:12px;padding:12px 16px;background:rgba(255,255,255,.6);border-radius:4px}
 .exp-feature-icon{width:8px;height:8px;background:var(--gold);border-radius:50%}
-.exp-feature-text{font-size:.85rem;color:var(--navy);font-weight:500}
+.exp-feature-text{font-size:var(--fs-small);color:var(--navy);font-weight:500}
 @media(max-width:968px){
   .experience-timeline::before{left:20px}
   .exp-item{grid-template-columns:1fr;gap:0;margin-bottom:60px}
@@ -514,17 +509,18 @@ footer{background:var(--navy);padding:52px 60px 40px;display:grid;grid-template-
 
 
 /* ═══ MODERN EXPERIENCE SECTION ═══ */
-.experience-modern{background:linear-gradient(135deg,#f0ede6 0%,#fff 100%);padding:96px 40px;margin-top:80px}
+.experience-modern{background:linear-gradient(135deg,#f0ede6 0%,#fff 100%);padding:72px 40px 80px;margin-top:0}
+@media(min-width:1024px){.experience-modern{padding-top:96px}}
 .exp-modern-container{max-width:1200px;margin:0 auto}
-.exp-modern-title{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:600;color:var(--navy);text-align:center;margin-bottom:12px}
-.exp-modern-subtitle{text-align:center;font-size:1.05rem;color:var(--muted);margin-bottom:64px}
+.exp-modern-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,2.5vw,2.5rem);font-weight:600;color:var(--navy);text-align:center;margin-bottom:12px}
+.exp-modern-subtitle{text-align:center;font-size:var(--fs-body);color:var(--muted);margin-bottom:64px}
 .exp-modern-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:stretch}
 .exp-modern-card{background:#fff;padding:48px 40px;box-shadow:0 8px 32px rgba(28,43,66,.1);position:relative;transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;height:100%}
 .exp-modern-card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(28,43,66,.18)}
 .exp-modern-number{position:absolute;top:32px;right:32px;font-family:'Playfair Display',serif;font-size:5rem;font-weight:700;color:rgba(184,149,46,.06);line-height:1}
-.exp-modern-heading{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:600;color:var(--navy);margin-bottom:20px;position:relative;z-index:2}
+.exp-modern-heading{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,1.5vw,1.7rem);font-weight:600;color:var(--navy);margin-bottom:20px;position:relative;z-index:2}
 .exp-modern-line{width:60px;height:3px;background:var(--gold);margin-bottom:24px}
-.exp-modern-text{font-size:.96rem;line-height:1.85;color:#4a5568;margin-bottom:32px;flex-grow:1}
+.exp-modern-text{font-size:var(--fs-body);line-height:1.85;color:#4a5568;margin-bottom:32px;flex-grow:1}
 .exp-modern-link{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:4px;transition:color .3s,border-color .3s;margin-top:auto}
 .exp-modern-link:hover{color:var(--navy);border-color:var(--navy)}
 @media(max-width:968px){
@@ -756,7 +752,7 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
     </div>
   </div>
 </section>
-<section style="background:var(--navy);padding:80px;text-align:center">
+<section class="pg-section navy" style="text-align:center">
   <span class="pg-eyebrow rv" style="display:block;text-align:center;margin-bottom:10px">Our Commitment</span>
   <h2 class="pg-h2 lt rv d1" style="text-align:center;margin-bottom:16px">50+ Years of Building Excellence</h2>
   <p class="rv d2" style="font-size:var(--fs-body);color:rgba(255,255,255,.52);max-width:580px;margin:0 auto 36px;line-height:1.88">From our first community to Westgate Village, every home carries our promise of quality, craftsmanship, and care — before, during, and long after move-in day.</p>
