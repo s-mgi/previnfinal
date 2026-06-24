@@ -645,28 +645,8 @@ nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(
   <a href="contact.html" class="pg-cta rv d3">Register Now</a>
 </section>
 
-<footer>
-  <div class="foot-col rv vis">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="community.html">Community</a>
-  </div>
-  <div class="foot-col rv d1 vis">
-    <a href="models.html">Models</a>
-    <a href="gallery.html">Resources</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <div class="foot-center rv d2 vis">
-    
-    <img src="images/logo-full.png" alt="Previn Court Homes" style="height:55px;width:auto;display:block;margin:0 auto">
-    <div class="foot-copy">©2026 Previn Court Homes.</div>
-  </div>
-  <div class="foot-addr rv d3 vis">
-    <span>212 WALKER BOULEVARD,</span>
-    <span>ALLISTON, ONTARIO</span>
-    <span class="phone">705-434-0255</span>
-  </div>
-</footer>
+<footer id="site-footer"></footer>
+<script src="footer.js"></script>
 <script>
 window.addEventListener('load',function(){setTimeout(function(){var p=document.getElementById('page-preloader');if(p)p.classList.add('done');},1200);});
 (function(){var d=document.getElementById('cur-dot'),r=document.getElementById('cur-ring');if(!d||!r)return;var mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(loop);})();document.querySelectorAll('a,button,.coll-card,.g-item,.play-circle,.pg-card,.pg-cta').forEach(function(el){el.addEventListener('mouseenter',function(){r.classList.add('big');});el.addEventListener('mouseleave',function(){r.classList.remove('big');});});})();
