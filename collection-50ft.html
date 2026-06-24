@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 50' Collection — Estate Homes · Previn Court Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   CANONICAL FLUID TYPOGRAPHY (injected)
+═══════════════════════════════════════ */
+:root{
+  /* Fluid type tokens — scale smoothly between mobile and desktop */
+  --fs-micro:   clamp(.62rem, .55rem + .25vw, .72rem);
+  --fs-small:   clamp(.78rem, .72rem + .3vw,  .9rem);
+  --fs-body:    clamp(.92rem, .85rem + .35vw, 1.05rem);
+  --fs-h2:      clamp(1.15rem, 1rem + .8vw,  1.5rem);
+  --fs-h1:      clamp(1.6rem, 1.3rem + 1.5vw, 2.4rem);
+  --fs-display: clamp(2.2rem, 1.6rem + 3vw,   3.8rem);
+}
+/* Fluid root: scales all rem-based sizes proportionally across breakpoints.
+   Default 1rem = 16px. This makes 1rem = ~14px at narrow widths, ~17px at wide. */
+html{font-size:clamp(15px, .35vw + 13.5px, 17px)}
+/* Sensible base body line-height for readability */
+body{line-height:1.55}
+/* Tighten heading line-heights regardless of which level */
+h1,h2,h3,h4{line-height:1.2}
+/* END canonical typography */
+
+/* ─── RESET ─── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;color:#2c3e5c;overflow-x:hidden;background:#fff;cursor:none}
+
+/* ─── TOKENS ─── */
+:root{
+  --navy:#1c2b42;
+  --navy-stats:#1f2f47;
+  --navy-coll:#1a2840;
+  --slate-exp:#3d526e;
+  --slate-card:#3a506a;
+  --slate-intro:#435572;
+  --gold:#b8952e;
+  --gold-lt:#c9a84c;
+  --cream:#f0ede6;
+  --page-bg:#efefed;
+  --muted:#8a9bb4;
+  --lt:#c5cfd9;
+}
+
+/* ═══ PRELOADER ═══ */
+#page-preloader{position:fixed;inset:0;z-index:9999;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .7s ease,visibility .7s ease}
+#page-preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+.prl-logo{font-family:'Playfair Display',serif;font-size:var(--fs-h1);font-weight:700;color:#fff;letter-spacing:.18em;text-transform:uppercase;margin-bottom:28px}
+.prl-logo span{color:var(--gold-lt)}
+.prl-track{width:200px;height:1px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
+.prl-fill{position:absolute;left:0;top:0;height:100%;width:0;background:var(--gold-lt);animation:preFill 1.5s .3s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes preFill{to{width:100%}}
+.prl-sub{margin-top:12px;font-size:var(--fs-micro);font-weight:600;letter-spacing:.22em;color:rgba(255,255,255,.4)}
+
+/* ═══ CURSOR ═══ */
+#cur-dot{position:fixed;top:0;left:0;width:7px;height:7px;background:var(--gold-lt);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+#cur-ring{position:fixed;top:0;left:0;width:38px;height:38px;border:1.5px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:9997;transform:translate(-50%,-50%);transition:left .11s ease,top .11s ease,width .3s ease,height .3s ease,border-color .3s ease}
+#cur-ring.big{width:60px;height:60px;border-color:rgba(201,168,76,.9)}
+@media(hover:none){#cur-dot,#cur-ring{display:none}body{cursor:auto}}
+
+/* ═══ NAV ═══ */
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:600;display:flex;justify-content:space-between;align-items:center;padding:24px 60px;background:transparent;transition:background .35s ease,padding .35s ease,box-shadow .35s ease}
+#main-nav.scrolled{background:rgba(20,31,48,.96);backdrop-filter:blur(12px);padding:12px 60px;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+.logo-wrap{cursor:none}
+.nav-links{list-style:none;display:flex;gap:36px;align-items:center}
+.nav-links li{position:relative}
+.nav-links a{color:#fff;text-decoration:none;font-size:.62rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;padding:8px 0;display:inline-block;border-bottom:1px solid transparent;transition:color .25s,border-color .25s;cursor:none}
+.nav-links a:hover,.nav-links a.active{color:var(--gold-lt);border-bottom-color:var(--gold-lt)}
+.nav-dropdown{position:absolute;top:100%;left:0;min-width:280px;background:rgba(20,31,48,.98);backdrop-filter:blur(14px);box-shadow:0 12px 32px rgba(0,0,0,.4);list-style:none;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;border-top:2px solid var(--gold-lt);z-index:550}
+.nav-links li.has-dropdown:hover .nav-dropdown,.nav-links li.has-dropdown:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown li{display:block!important;height:auto!important}
+.nav-dropdown a{display:block!important;padding:12px 22px!important;height:auto!important;font-size:.62rem!important;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)!important;border-bottom:none!important;transition:color .2s,background .2s,padding-left .2s}
+.nav-dropdown a::after{display:none!important}
+.nav-dropdown a:hover{color:var(--gold-lt)!important;background:rgba(255,255,255,.04);padding-left:28px!important;border-bottom:none!important}
+.nav-dropdown .dd-name{font-family:'Playfair Display',serif;font-size:.82rem!important;font-style:italic;color:#fff!important;text-transform:none;letter-spacing:0;font-weight:500;margin-bottom:2px;display:block;line-height:1.2}
+.nav-dropdown .dd-meta{display:block;font-size:.55rem;letter-spacing:.18em;color:var(--gold-lt);font-weight:600;text-transform:uppercase}
+
+/* ═══ REVEAL ═══ */
+.rv,.rv-l,.rv-r{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s cubic-bezier(.4,0,.2,1)}
+.rv-l{transform:translateX(-36px)}
+.rv-r{transform:translateX(36px)}
+.rv.vis,.rv-l.vis,.rv-r.vis{opacity:1;transform:none}
+.rv.d1{transition-delay:.15s}.rv.d2{transition-delay:.3s}.rv.d3{transition-delay:.45s}.rv.d4{transition-delay:.6s}
+
+/* ═══ HERO ═══ */
+.coll-hero{position:relative;height:80vh;min-height:560px;background:var(--navy);overflow:hidden;display:flex;align-items:center;padding:0 80px;color:#fff}
+.coll-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.45}
+.coll-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,31,48,.9) 0%,rgba(20,31,48,.5) 50%,rgba(20,31,48,.85) 100%)}
+.coll-hero-content{position:relative;z-index:2;max-width:760px}
+.coll-hero-tag{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.coll-hero-tag .tag-line{height:1px;width:48px;background:var(--gold-lt)}
+.coll-hero-tag span{font-size:var(--fs-micro);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-lt)}
+.coll-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,var(--fs-display));font-weight:600;line-height:1.05;margin-bottom:24px}
+.coll-hero h1 em{font-style:italic;color:var(--gold-lt);font-weight:500}
+.coll-hero p.intro{font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,.78);max-width:620px;margin-bottom:36px}
+.coll-hero-stats{display:flex;gap:48px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.15);padding-top:28px}
+.cs-stat{display:flex;flex-direction:column;gap:4px}
+.cs-stat-num{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--gold-lt);line-height:1}
+.cs-stat-lbl{font-size:.6rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ═══ STICKY MODEL BANNER ═══ */
+.sticky-banner{position:sticky;top:70px;z-index:480;background:rgba(20,31,48,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,168,76,.25);padding:14px 52px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,.18)}
+@media(max-width:900px){.sticky-banner{top:64px;padding:12px 24px}}
+.sb-left{display:flex;align-items:center;gap:14px}
+.sb-tag{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
+.sb-divider{width:1px;height:18px;background:rgba(255,255,255,.15)}
+.sb-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:600;color:#fff}
+.sb-name em{font-style:italic;color:var(--gold-lt);font-weight:500;margin-right:6px}
+.sb-meta{font-size:.7rem;font-weight:500;letter-spacing:.06em;color:rgba(255,255,255,.55);margin-left:12px}
+.sb-back{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);text-decoration:none;cursor:none;transition:color .25s}
+.sb-back:hover{color:var(--gold-lt)}
+
+/* ═══ MODELS GRID (top of page TOC) ═══ */
+.models-grid-section{background:var(--navy);padding:96px 80px}
+.mgs-head{text-align:center;margin-bottom:52px;max-width:680px;margin-left:auto;margin-right:auto}
+.mgs-eyebrow{font-size:var(--fs-micro);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:14px}
+.mgs-h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,var(--fs-h1));font-weight:600;color:#fff;line-height:1.2}
+.mgs-h2 em{font-style:italic;color:var(--gold-lt);font-weight:500}
+.mgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1240px;margin:0 auto}
+.mgs-card{background:var(--slate-card);overflow:hidden;cursor:none;border:none;font-family:inherit;color:inherit;text-align:left;padding:0;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s ease}
+.mgs-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.mgs-card.bungalow{border:1px solid rgba(201,168,76,.45)}
+.mgs-card-img{position:relative;aspect-ratio:4/3;background:#0e1828;overflow:hidden}
+.mgs-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.mgs-card:hover .mgs-card-img img{transform:scale(1.05)}
+.mgs-card-badge{position:absolute;top:14px;left:14px;background:rgba(15,23,38,.88);backdrop-filter:blur(8px);padding:6px 12px;font-size:.55rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);border:1px solid rgba(201,168,76,.35)}
+.mgs-card.bungalow .mgs-card-badge{background:rgba(201,168,76,.92);color:var(--navy);border-color:transparent}
+.mgs-card-body{padding:22px 22px 24px;flex:1;display:flex;flex-direction:column}
+.mgs-card-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:#fff;margin-bottom:4px;line-height:1.2}
+.mgs-card-name em{font-style:italic;color:var(--gold-lt);font-weight:500}
+.mgs-card-tag{font-size:var(--fs-micro);font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:18px}
+.mgs-card-meta{display:flex;gap:14px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);padding-top:14px;margin-top:auto}
+.mgs-card-meta-item{font-size:.7rem;color:rgba(255,255,255,.7)}
+.mgs-card-meta-item strong{color:#fff;font-weight:600;font-family:'Playfair Display',serif;margin-right:4px}
+.mgs-card-cta{margin-top:16px;display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
+.mgs-card-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .3s ease}
+.mgs-card:hover .mgs-card-cta svg{transform:translateX(4px)}
+
+/* ═══ TYPE DIVIDER ═══ */
+.type-divider{padding:80px 80px 32px;background:#fff;text-align:center;display:flex;align-items:center;gap:32px;justify-content:center;max-width:1240px;margin:0 auto}
+.type-divider .td-line{flex:1;height:1px;background:rgba(28,43,66,.12);max-width:240px}
+.type-divider .td-content{display:flex;flex-direction:column;align-items:center;gap:8px}
+.type-divider .td-eyebrow{font-size:var(--fs-micro);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.type-divider .td-h{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--navy)}
+.type-divider .td-h em{font-style:italic;color:var(--gold);font-weight:500}
+
+/* ═══ MODEL ACCORDIONS ═══ */
+.model-stack{padding:0 80px 80px;background:#fff;max-width:1400px;margin:0 auto}
+.model-acc{margin-bottom:18px;background:#fff;border:1px solid rgba(28,43,66,.1);overflow:hidden;transition:border-color .3s ease}
+.model-acc.open{border-color:var(--gold-lt)}
+.model-acc-header{width:100%;padding:28px 36px;display:flex;justify-content:space-between;align-items:center;background:#fff;border:none;cursor:none;font-family:inherit;color:inherit;text-align:left;transition:background .3s ease}
+.model-acc.open .model-acc-header{background:var(--cream)}
+.model-acc-header:hover{background:rgba(240,237,230,.55)}
+.model-acc-left{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap}
+.model-acc-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--navy);line-height:1.2}
+.model-acc-name em{font-style:italic;color:var(--gold);font-weight:500}
+.model-acc-meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;gap:12px}
+.model-acc-meta span{font-size:.78rem;color:#5e7088;font-weight:500}
+.model-acc-meta strong{color:var(--navy);font-weight:600;font-family:'Playfair Display',serif;margin-right:4px}
+.model-acc-meta .model-acc-tag{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.model-acc-chev{width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--gold);transition:transform .35s cubic-bezier(.4,0,.2,1);flex-shrink:0;margin-left:24px}
+.model-acc-chev svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.model-acc.open .model-acc-chev{transform:rotate(180deg)}
+
+.model-acc-body{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1)}
+.model-acc.open .model-acc-body{max-height:6000px}
+
+.model-acc-content{padding:48px 48px 56px;border-top:1px solid rgba(28,43,66,.08);background:#fff}
+.macc-info-full{margin-bottom:48px;max-width:880px}
+.macc-info-full h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:var(--navy);margin-bottom:14px;line-height:1.25}
+.macc-info-full h3 em{font-style:italic;color:var(--gold);font-weight:500}
+.macc-info-full p.macc-desc{font-size:.95rem;line-height:1.85;color:#5e7088;margin-bottom:24px}
+.macc-specs{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(28,43,66,.1);border-bottom:1px solid rgba(28,43,66,.1);padding:18px 0}
+.macc-spec{display:flex;flex-direction:column;align-items:center;text-align:center;border-right:1px solid rgba(28,43,66,.06);padding:0 6px}
+.macc-spec:last-child{border-right:none}
+.macc-spec-num{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--navy);line-height:1;margin-bottom:5px}
+.macc-spec-lbl{font-size:.55rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#8a9bb4}
+.macc-notes{margin-top:20px;padding:14px 18px;background:var(--cream);border-left:3px solid var(--gold);font-size:.85rem;line-height:1.6;color:#5e7088;font-style:italic}
+
+/* Elevation switcher */
+.macc-fp-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.macc-fp-h{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--navy);line-height:1.25}
+.macc-fp-h em{font-style:italic;color:var(--gold);font-weight:500}
+.macc-fp-eyebrow{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+.macc-render-frame{position:relative;width:100%;aspect-ratio:16/10;background:#0e1828;overflow:hidden;box-shadow:0 16px 40px rgba(28,43,66,.18);margin-bottom:24px}
+.macc-render-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;visibility:hidden;transition:opacity .45s cubic-bezier(.4,0,.2,1),visibility .45s}
+.macc-render-img.active{opacity:1;visibility:visible}
+.macc-elev-buttons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:32px}
+.macc-elev-btn{background:transparent;border:1px solid rgba(28,43,66,.18);padding:14px 22px;display:flex;flex-direction:column;align-items:flex-start;gap:4px;cursor:none;font-family:inherit;color:inherit;text-align:left;transition:background .25s,border-color .25s,color .25s}
+.macc-elev-btn:hover{border-color:var(--gold)}
+.macc-elev-btn.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.macc-elev-btn-name{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;color:inherit;line-height:1.1}
+.macc-elev-btn.active .macc-elev-btn-name{color:#fff}
+.macc-elev-btn-sqft{font-size:var(--fs-micro);font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.macc-elev-btn.active .macc-elev-btn-sqft{color:var(--gold-lt)}
+.macc-fp-single{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden}
+.macc-fp-single img{width:100%;height:auto;display:block}
+.macc-fp-wrap{background:#fff;box-shadow:0 16px 40px rgba(28,43,66,.18);overflow:hidden;position:relative}
+.macc-fp-img{width:100%;height:auto;display:none}
+.macc-fp-img.active{display:block}
+
+/* CTA row at bottom of accordion */
+.macc-cta{margin-top:48px;padding-top:32px;border-top:1px solid rgba(28,43,66,.08);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.macc-cta p{font-size:.9rem;color:#5e7088;line-height:1.5;max-width:520px;margin:0}
+.macc-cta-buttons{display:flex;gap:14px;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:var(--gold);color:#fff;font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border:1px solid var(--gold);transition:background .25s,border-color .25s;cursor:none}
+.btn-gold:hover{background:var(--gold-lt);border-color:var(--gold-lt)}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:13px 28px;background:transparent;color:var(--navy);font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(28,43,66,.25);transition:background .25s,color .25s,border-color .25s;cursor:none}
+.btn-ghost:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+
+/* ═══ SITE PLAN ═══ */
+.siteplan-section{background:var(--cream);padding:96px 80px}
+.sp-inner{max-width:1240px;margin:0 auto}
+.sp-head{text-align:center;margin-bottom:48px;max-width:680px;margin-left:auto;margin-right:auto}
+.sp-eyebrow{font-size:var(--fs-micro);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+.sp-h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,var(--fs-h1));font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:18px}
+.sp-h2 em{font-style:italic;color:var(--gold);font-weight:500}
+.sp-intro{font-size:var(--fs-body);line-height:1.85;color:#5e7088}
+.sp-img-wrap{background:#fff;padding:0;box-shadow:0 24px 56px rgba(28,43,66,.16);overflow:hidden}
+.sp-img-wrap img{width:100%;height:auto;display:block}
+
+/* ═══ HOW TO CHOOSE GUIDE ═══ */
+.choose-section{background:#fff;padding:96px 80px}
+.cs-inner{max-width:1180px;margin:0 auto}
+.cs-head{text-align:center;margin-bottom:64px;max-width:680px;margin-left:auto;margin-right:auto}
+.cs-h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,var(--fs-h1));font-weight:600;color:var(--navy);line-height:1.2;margin-bottom:18px}
+.cs-h2 em{font-style:italic;color:var(--gold);font-weight:500}
+.cs-intro{font-size:var(--fs-body);line-height:1.85;color:#5e7088}
+.cs-step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.cs-step{background:var(--cream);padding:40px 32px 36px;position:relative;display:flex;flex-direction:column;border-top:3px solid var(--gold-lt);transition:transform .35s ease,box-shadow .35s ease}
+.cs-step:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(28,43,66,.12)}
+.cs-step-num{font-family:'Playfair Display',serif;font-style:italic;font-size:3.5rem;font-weight:500;color:var(--gold);opacity:.18;line-height:1;position:absolute;top:24px;right:28px}
+.cs-step-icon{width:42px;height:42px;color:var(--gold);margin-bottom:22px}
+.cs-step-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5}
+.cs-step-h3{font-family:'Playfair Display',serif;font-size:var(--fs-h2);font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:14px}
+.cs-step-p{font-size:var(--fs-body);line-height:1.78;color:#5e7088;margin-bottom:0;flex:1}
+
+/* ═══ OTHER COLLECTIONS ═══ */
+.other-coll{background:var(--navy);padding:96px 80px;color:#fff}
+.oc-inner{max-width:1240px;margin:0 auto}
+.oc-head{text-align:center;margin-bottom:48px}
+.oc-eyebrow{font-size:var(--fs-micro);font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:14px}
+.oc-h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,var(--fs-h1));font-weight:600;color:#fff;line-height:1.2}
+.oc-h2 em{font-style:italic;color:var(--gold-lt);font-weight:500}
+.oc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:920px;margin:0 auto}
+.oc-card{background:var(--slate-card);padding:32px 36px;text-decoration:none;color:#fff;transition:transform .35s ease,box-shadow .35s ease;cursor:none}
+.oc-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,.4)}
+.oc-card-eyebrow{font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:8px;display:block}
+.oc-card-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.2}
+.oc-card-name em{font-style:italic;color:var(--gold-lt);font-weight:500}
+.oc-card-meta{font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:22px}
+.oc-card-cta{display:flex;justify-content:space-between;align-items:center;font-size:var(--fs-micro);font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
+.oc-card-cta svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.8;transition:transform .3s ease}
+.oc-card:hover .oc-card-cta svg{transform:translateX(4px)}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--navy-coll);color:#fff;padding:80px 80px 32px;display:grid;grid-template-columns:1fr 1fr 1.4fr 1fr;gap:48px;align-items:start;position:relative}
+.foot-col{display:flex;flex-direction:column;gap:10px}
+.foot-col-title{font-size:.6rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:6px}
+.foot-col a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;transition:color .25s;cursor:none}
+.foot-col a:hover{color:var(--gold-lt)}
+.foot-center{display:flex;flex-direction:column;align-items:center;text-align:center}
+.foot-tagline{font-family:'Playfair Display',serif;font-size:.95rem;color:rgba(255,255,255,.65);font-style:italic}
+.foot-addr{display:flex;flex-direction:column;gap:4px}
+.foot-addr p{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.7);margin:0}
+.foot-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.08);padding-top:22px;margin-top:32px;display:flex;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.06em}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1100px){
+  .mgs-grid{grid-template-columns:repeat(2,1fr)}
+  
+}
+@media(max-width:900px){
+  #main-nav{padding:18px 28px}
+  #main-nav.scrolled{padding:10px 28px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:.55rem}
+  .coll-hero{padding:0 28px}
+  .sticky-banner{padding:12px 28px;flex-wrap:wrap;gap:8px}
+  .sb-meta{display:none}
+  .models-grid-section,.siteplan-section,.choose-section,.other-coll,footer{padding-left:28px;padding-right:28px}
+  .model-stack{padding:0 28px 60px}
+  .mgs-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  .model-acc-header{padding:22px 24px}
+  .model-acc-content{padding:32px 24px 36px}
+  .macc-elev-buttons{grid-template-columns:1fr;gap:10px}
+  .cs-step-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  .oc-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
+  footer{grid-template-columns:1fr;gap:28px;padding:60px 28px 24px}
+  .foot-bottom{flex-direction:column;gap:8px}
+  .type-divider{padding:60px 28px 24px;gap:18px}
+  .type-divider .td-line{max-width:80px}
+}
+@media(max-width:560px){
+  .coll-hero-stats{gap:24px}
+  .macc-specs{grid-template-columns:repeat(2,1fr);row-gap:20px}
+  .macc-specs .macc-spec:nth-child(2){border-right:none}
+  .model-acc-name{font-size:1.3rem}
+  .model-acc-meta{gap:10px;font-size:.7rem;gap:12px}
+}
+
+
+
+/* ═══════════════════════════════════════
+   NAV (canonical) — 70px tall, transparent over hero, solid when scrolled
+═══════════════════════════════════════ */
+nav#main-nav,
+nav{position:fixed!important;top:0;left:0;right:0;z-index:9000!important;background:rgba(24,34,52,.93)!important;backdrop-filter:blur(12px);height:70px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 52px!important;border-bottom:1px solid rgba(201,168,76,.2)!important;transition:background .3s,box-shadow .3s!important}
+nav#main-nav.scrolled,
+nav.scrolled{background:rgba(15,23,38,.97)!important;box-shadow:0 4px 32px rgba(0,0,0,.4)!important}
+.logo-wrap{display:flex!important;align-items:center!important;gap:12px!important;text-decoration:none!important;height:100%!important}
+.logo-wrap img{height:50px!important;width:auto!important;object-fit:contain!important;display:block!important}
+.nav-links{display:flex!important;list-style:none!important;align-items:center!important;gap:0!important;height:70px!important;margin:0!important;padding:0!important}
+.nav-links li{display:flex!important;align-items:stretch!important;position:relative}
+.nav-links a{display:flex!important;align-items:center!important;padding:0 18px!important;height:70px!important;font-size:.63rem!important;font-weight:600!important;letter-spacing:.18em!important;text-transform:uppercase!important;color:rgba(255,255,255,.8)!important;text-decoration:none!important;border-bottom:3px solid transparent!important;transition:color .2s,border-color .2s!important;cursor:none}
+.nav-links a:hover{color:#fff!important;border-bottom-color:rgba(201,168,76,.55)!important}
+.nav-links a.active{color:#fff!important;border-bottom-color:#c9a84c!important}
+.nav-links a::after{display:none!important}
+/* Dropdown (Models menu) */
+.nav-links li.has-dropdown{position:relative}
+.nav-dropdown{position:absolute;top:100%;left:0;min-width:300px;background:rgba(20,31,48,.98);backdrop-filter:blur(14px);box-shadow:0 12px 32px rgba(0,0,0,.4);list-style:none;padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;border-top:2px solid var(--gold-lt);z-index:9100}
+.nav-links li.has-dropdown:hover .nav-dropdown,.nav-links li.has-dropdown:focus-within .nav-dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown li{display:block!important;height:auto!important;align-items:initial!important}
+.nav-dropdown a{display:block!important;padding:12px 28px 14px!important;height:auto!important;font-size:.62rem!important;font-weight:600!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:rgba(255,255,255,.72)!important;border-bottom:none!important;transition:color .2s,background .2s,padding-left .2s!important;white-space:nowrap}
+.nav-dropdown a::after{display:none!important}
+.nav-dropdown a:hover{color:var(--gold-lt)!important;background:rgba(255,255,255,.04)!important;padding-left:34px!important;border-bottom:none!important}
+.nav-dropdown .dd-name{font-family:'Playfair Display',serif!important;font-size:.85rem!important;font-style:italic!important;color:#fff!important;text-transform:none!important;letter-spacing:0!important;font-weight:500!important;margin-bottom:3px!important;display:block!important;line-height:1.2!important}
+.nav-dropdown .dd-meta{display:block!important;font-size:.55rem!important;letter-spacing:.18em!important;color:var(--gold-lt)!important;font-weight:600!important;text-transform:uppercase!important}
+@media(max-width:900px){
+  nav#main-nav,nav{padding:0 24px!important;height:64px!important}
+  .nav-links,.nav-links a{height:64px!important}
+  .nav-links a{padding:0 12px!important;font-size:.55rem!important;letter-spacing:.14em!important}
+  .nav-dropdown{min-width:260px}
+}
+/* END canonical nav */
+
+/* ── 13" / mid-range desktop ── */
+@media(min-width:901px) and (max-width:1440px){
+  .coll-hero{height:68vh;min-height:460px}
+  .models-grid-section{padding:64px 60px}
+  .model-stack{padding:0 60px 60px;max-width:1200px}
+  .siteplan-section{padding:64px 60px}
+  .choose-section{padding:64px 60px}
+  .other-coll{padding:64px 60px}
+  .type-divider{padding:48px 60px 20px}
+  .mgs-grid{gap:16px}
+}
+</style>
+  <link rel="stylesheet" href="mobile-styles.css">
+</head>
+<body>
+
+<div id="page-preloader">
+  <div class="prl-logo">PREVIN <span>COURT</span></div>
+  <div class="prl-track"><div class="prl-fill"></div></div>
+  <div class="prl-sub">Crafting Excellence</div>
+</div>
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+
+<nav id="main-nav">
+  <a href="index.html" class="logo-wrap">
+    <img src="images/logo-full.png" alt="Previn Court Homes" style="height:58px;width:auto;object-fit:contain;display:block">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li class="has-dropdown"><a href="models.html" class="active">Models</a>
+      <ul class="nav-dropdown">
+        <li><a href="models.html"><span class="dd-name">All Collections</span><span class="dd-meta">Overview</span></a></li>
+        <li><a href="collection-32ft.html"><span class="dd-name">The 32' Collection</span><span class="dd-meta">Modern Family Homes</span></a></li>
+        <li><a href="collection-40ft.html"><span class="dd-name">The 40' Collection</span><span class="dd-meta">Executive Homes</span></a></li>
+        <li><a href="collection-50ft.html"><span class="dd-name">The 50' Collection</span><span class="dd-meta">Estate Homes</span></a></li>
+      </ul>
+    </li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="coll-hero">
+  <div class="coll-hero-bg" style="background-image:url('images/collections/50ft/hero.jpg')"></div>
+  <div class="coll-hero-content">
+    <div class="coll-hero-tag rv vis"><div class="tag-line"></div><span>Our Collections</span></div>
+    <h1 class="rv d1 vis">The 50' Collection<br><em>Estate Homes</em></h1>
+    <p class="intro rv d2 vis">Three estate two-storey homes and two bungalow options, ranging from 1,570 to 4,000 square feet. Estate-scale layouts on premium 50-foot lots — ideal for multi-generational households or those seeking elevated everyday living.</p>
+    <div class="coll-hero-stats rv d3 vis">
+      <div class="cs-stat"><span class="cs-stat-num">5</span><span class="cs-stat-lbl">Models</span></div>
+      <div class="cs-stat"><span class="cs-stat-num">1,570–4,000</span><span class="cs-stat-lbl">Sqft Range</span></div>
+      <div class="cs-stat"><span class="cs-stat-num">50'</span><span class="cs-stat-lbl">Lot Frontage</span></div>
+      <div class="cs-stat"><span class="cs-stat-num">Estate + Bungalow</span><span class="cs-stat-lbl">Options</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STICKY MODEL BANNER ═══ -->
+<div class="sticky-banner" id="sticky-banner">
+  <div class="sb-left">
+    <span class="sb-tag">50' Collection</span>
+    <div class="sb-divider"></div>
+    <span class="sb-name"><em>Previn Court · </em>Estate Homes</span>
+  </div>
+  <a href="#models-grid" class="sb-back">Browse Models ↓</a>
+</div>
+
+<!-- ═══ MODELS GRID (TOP-OF-PAGE TOC) ═══ -->
+<section class="models-grid-section" id="models-grid">
+  <div class="mgs-head rv vis">
+    <span class="mgs-eyebrow">50' Collection</span>
+    <h2 class="mgs-h2">Choose Your <em>Model</em></h2>
+  </div>
+  <div class="mgs-grid">
+    <button type="button" class="mgs-card rv vis" data-target="acc-hamilton">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Two-Storey · 3,565 sqft</span>
+        <img src="images/models/hamilton/elevation-a.jpg" alt="The Hamilton">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Hamilton</em></h3>
+        <span class="mgs-card-tag">Estate Two-Storey</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>3,565</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>3.5</strong>bath</span>
+          
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+    <button type="button" class="mgs-card rv d2 vis" data-target="acc-livingston">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Two-Storey · 3,722 sqft</span>
+        <img src="images/models/livingston/elevation-a.jpg" alt="The Livingston">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Livingston</em></h3>
+        <span class="mgs-card-tag">Estate Two-Storey</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>3,722</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>3.5</strong>bath</span>
+          
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+    <button type="button" class="mgs-card rv d3 vis" data-target="acc-coatbridge">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Two-Storey · 4,000 sqft</span>
+        <img src="images/models/coatbridge/elevation-a.jpg" alt="The Coatbridge">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Coatbridge</em></h3>
+        <span class="mgs-card-tag">Premier Estate</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>4,000</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>4</strong>bath</span>
+          
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+    <button type="button" class="mgs-card bungalow rv d1 vis" data-target="acc-stonehaven">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Bungalow · 1,570 sqft</span>
+        <img src="images/models/stonehaven/elevation-a.jpg" alt="The Stonehaven">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Stonehaven</em></h3>
+        <span class="mgs-card-tag">Compact Bungalow</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>1,570</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>2</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>2</strong>bath</span>
+          
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+    <button type="button" class="mgs-card bungalow rv d2 vis" data-target="acc-braemar">
+      <div class="mgs-card-img">
+        <span class="mgs-card-badge">Bungalow · 1,840 sqft</span>
+        <img src="images/models/braemar/elevation-a.jpg" alt="The Braemar">
+      </div>
+      <div class="mgs-card-body">
+        <h3 class="mgs-card-name">The <em>Braemar</em></h3>
+        <span class="mgs-card-tag">Spacious Bungalow</span>
+        <div class="mgs-card-meta">
+          <span class="mgs-card-meta-item"><strong>1,840</strong>sqft</span>
+          <span class="mgs-card-meta-item"><strong>3</strong>bed</span>
+          <span class="mgs-card-meta-item"><strong>2</strong>bath</span>
+          
+        </div>
+        <div class="mgs-card-cta">View Details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      </div>
+    </button>
+  </div>
+</section>
+
+<!-- ═══ TWO-STOREY DIVIDER ═══ -->
+<div class="type-divider">
+  <div class="td-line"></div>
+  <div class="td-content rv vis">
+    <span class="td-eyebrow">Two-Storey Homes</span>
+    <h3 class="td-h">Two-Storey <em>Homes</em></h3>
+  </div>
+  <div class="td-line"></div>
+</div>
+
+<section class="model-stack">
+
+  <!-- MODEL: Hamilton -->
+  <div class="model-acc" id="acc-hamilton" data-model="hamilton" data-name="Hamilton" data-type="two-storey" data-meta="3,565 sqft · 4 bed · 3.5 bath · Two-Storey">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Hamilton</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Estate Two-Storey</span>
+          <span><strong>3,565</strong>sqft</span>
+          <span><strong>4</strong>bed</span>
+          <span><strong>3.5</strong>bath</span>
+          
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+
+        <!-- TOP: hero render + info -->
+        <div class="macc-info-full">            <h3>The <em>Hamilton</em></h3>
+            <p class="macc-desc">An estate-scale 3,565 sqft two-storey home with four bedrooms, 3.5 bathrooms, and dedicated formal living spaces. Premium finishes throughout, with a fully customizable basement layout.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">3,565</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">3.5</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Storeys</span></div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR + FLOORPLAN -->
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior &amp; Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+
+        <!-- Active exterior render — swaps when A/B is clicked -->
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/hamilton/elevation-a.jpg" alt="The Hamilton — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/hamilton/elevation-b.jpg" alt="The Hamilton — Elevation B">
+        </div>
+
+        <!-- Elevation A/B selector buttons -->
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">3,565 sq ft · CP#5</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">3,565 sq ft · CP#12</span>
+          </button>
+        </div>
+
+        <!-- Single floorplan image (combined A & B) -->
+        <div class="macc-fp-single">
+          <img src="images/models/hamilton/floorplan-a.jpg" alt="The Hamilton — Full Floorplan">
+        </div>
+
+        <!-- CTA ROW -->
+        <div class="macc-cta">
+          <p>Interested in The Hamilton? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="brochures/hamilton.pdf" target="_blank" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODEL: Livingston -->
+  <div class="model-acc" id="acc-livingston" data-model="livingston" data-name="Livingston" data-type="two-storey" data-meta="3,722 sqft · 4 bed · 3.5 bath · Two-Storey">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Livingston</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Estate Two-Storey</span>
+          <span><strong>3,722</strong>sqft</span>
+          <span><strong>4</strong>bed</span>
+          <span><strong>3.5</strong>bath</span>
+          
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+
+        <!-- TOP: hero render + info -->
+        <div class="macc-info-full">            <h3>The <em>Livingston</em></h3>
+            <p class="macc-desc">A 3,722 sqft estate home featuring four bedrooms, 3.5 bathrooms, and a grand two-storey foyer. Designed for entertaining at scale.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">3,722</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">3.5</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Storeys</span></div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR + FLOORPLAN -->
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior &amp; Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+
+        <!-- Active exterior render — swaps when A/B is clicked -->
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/livingston/elevation-a.jpg" alt="The Livingston — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/livingston/elevation-b.jpg" alt="The Livingston — Elevation B">
+        </div>
+
+        <!-- Elevation A/B selector buttons -->
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">3,722 sq ft · CP#10</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">3,722 sq ft · CP#11</span>
+          </button>
+        </div>
+
+        <!-- Single floorplan image (combined A & B) -->
+        <div class="macc-fp-single">
+          <img src="images/models/livingston/floorplan-a.jpg" alt="The Livingston — Full Floorplan">
+        </div>
+
+        <!-- CTA ROW -->
+        <div class="macc-cta">
+          <p>Interested in The Livingston? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="brochures/livingston.pdf" target="_blank" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODEL: Coatbridge -->
+  <div class="model-acc" id="acc-coatbridge" data-model="coatbridge" data-name="Coatbridge" data-type="two-storey" data-meta="4,000 sqft · 4 bed · 4 bath · Two-Storey">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Coatbridge</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Premier Estate</span>
+          <span><strong>4,000</strong>sqft</span>
+          <span><strong>4</strong>bed</span>
+          <span><strong>4</strong>bath</span>
+          
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+
+        <!-- TOP: hero render + info -->
+        <div class="macc-info-full">            <h3>The <em>Coatbridge</em></h3>
+            <p class="macc-desc">The flagship 4,000 sqft Coatbridge — four bedrooms plus an optional 5th, four bathrooms. Estate-scale layout with formal and family wings for multi-generational living. Elevation B includes a balcony.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">4,000</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">4</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Storeys</span></div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR + FLOORPLAN -->
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior &amp; Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+
+        <!-- Active exterior render — swaps when A/B is clicked -->
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/coatbridge/elevation-a.jpg" alt="The Coatbridge — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/coatbridge/elevation-b.jpg" alt="The Coatbridge — Elevation B">
+        </div>
+
+        <!-- Elevation A/B selector buttons -->
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">4,000 sq ft · CP#4</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">4,000 sq ft · CP#14</span>
+          </button>
+        </div>
+
+        <!-- Single floorplan image (combined A & B) -->
+        <div class="macc-fp-single">
+          <img src="images/models/coatbridge/floorplan-a.jpg" alt="The Coatbridge — Full Floorplan">
+        </div>
+
+        <!-- CTA ROW -->
+        <div class="macc-cta">
+          <p>Interested in The Coatbridge? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="brochures/coatbridge.pdf" target="_blank" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══ BUNGALOW DIVIDER ═══ -->
+<div class="type-divider">
+  <div class="td-line"></div>
+  <div class="td-content rv vis">
+    <span class="td-eyebrow">Section · Bungalows</span>
+    <h3 class="td-h">Single-Storey <em>Bungalows</em></h3>
+  </div>
+  <div class="td-line"></div>
+</div>
+
+<section class="model-stack">
+
+  <!-- MODEL: Stonehaven -->
+  <div class="model-acc" id="acc-stonehaven" data-model="stonehaven" data-name="Stonehaven" data-type="bungalow" data-meta="1,570 sqft · 2 bed · 2 bath · Bungalow">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Stonehaven</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Compact Bungalow</span>
+          <span><strong>1,570</strong>sqft</span>
+          <span><strong>2</strong>bed</span>
+          <span><strong>2</strong>bath</span>
+          
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+
+        <!-- TOP: hero render + info -->
+        <div class="macc-info-full">            <h3>The <em>Stonehaven</em></h3>
+            <p class="macc-desc">A 1,570 sqft single-storey bungalow ideal for downsizers or empty-nesters. Two bedrooms, two bathrooms, all on one level with no stairs.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">1,570</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">1</span><span class="macc-spec-lbl">Storey</span></div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR + FLOORPLAN -->
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior &amp; Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+
+        <!-- Active exterior render — swaps when A/B is clicked -->
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/stonehaven/elevation-a.jpg" alt="The Stonehaven — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/stonehaven/elevation-b.jpg" alt="The Stonehaven — Elevation B">
+        </div>
+
+        <!-- Elevation A/B selector buttons -->
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">1,570 sq ft · CP#3</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">1,570 sq ft · CP#9</span>
+          </button>
+        </div>
+
+        <!-- Single floorplan image (combined A & B) -->
+        <div class="macc-fp-single">
+          <img src="images/models/stonehaven/floorplan-a.jpg" alt="The Stonehaven — Full Floorplan">
+        </div>
+
+        <!-- CTA ROW -->
+        <div class="macc-cta">
+          <p>Interested in The Stonehaven? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="brochures/stonehaven.pdf" target="_blank" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODEL: Braemar -->
+  <div class="model-acc" id="acc-braemar" data-model="braemar" data-name="Braemar" data-type="bungalow" data-meta="1,840 sqft · 3 bed · 2 bath · Bungalow">
+    <button type="button" class="model-acc-header" aria-expanded="false">
+      <div class="model-acc-left">
+        <h3 class="model-acc-name">The <em>Braemar</em></h3>
+        <div class="model-acc-meta">
+          <span class="model-acc-tag">Spacious Bungalow</span>
+          <span><strong>1,840</strong>sqft</span>
+          <span><strong>3</strong>bed</span>
+          <span><strong>2</strong>bath</span>
+          
+        </div>
+      </div>
+      <div class="model-acc-chev"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></div>
+    </button>
+    <div class="model-acc-body">
+      <div class="model-acc-content">
+
+        <!-- TOP: hero render + info -->
+        <div class="macc-info-full">            <h3>The <em>Braemar</em></h3>
+            <p class="macc-desc">A 1,840 sqft single-storey bungalow with three bedrooms and a primary suite featuring a 5-piece ensuite. Step-free living with the option of a finished basement.</p>
+            <div class="macc-specs">
+              <div class="macc-spec"><span class="macc-spec-num">1,840</span><span class="macc-spec-lbl">Sq Ft</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">3</span><span class="macc-spec-lbl">Bedrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">2</span><span class="macc-spec-lbl">Bathrooms</span></div>
+              <div class="macc-spec"><span class="macc-spec-num">1</span><span class="macc-spec-lbl">Storey</span></div>
+            </div>
+        </div>
+
+        <!-- EXTERIOR + FLOORPLAN -->
+        <div class="macc-fp-head">
+          <div>
+            <span class="macc-fp-eyebrow">Exterior &amp; Floorplan</span>
+            <h4 class="macc-fp-h">Choose Your <em>Elevation</em></h4>
+          </div>
+        </div>
+
+        <!-- Active exterior render — swaps when A/B is clicked -->
+        <div class="macc-render-frame">
+          <img class="macc-render-img active" data-elev="a" src="images/models/braemar/elevation-a.jpg" alt="The Braemar — Elevation A">
+          <img class="macc-render-img" data-elev="b" src="images/models/braemar/elevation-b.jpg" alt="The Braemar — Elevation B">
+        </div>
+
+        <!-- Elevation A/B selector buttons -->
+        <div class="macc-elev-buttons" role="tablist" aria-label="Elevation selector">
+          <button type="button" class="macc-elev-btn active" data-elev="a" role="tab" aria-selected="true">
+            <span class="macc-elev-btn-name">Elevation A</span>
+            <span class="macc-elev-btn-sqft">1,840 sq ft · CP#1</span>
+          </button>
+          <button type="button" class="macc-elev-btn" data-elev="b" role="tab" aria-selected="false">
+            <span class="macc-elev-btn-name">Elevation B</span>
+            <span class="macc-elev-btn-sqft">1,840 sq ft · CP#6</span>
+          </button>
+        </div>
+
+        <!-- Single floorplan image (combined A & B) -->
+        <div class="macc-fp-single">
+          <img src="images/models/braemar/floorplan-a.jpg" alt="The Braemar — Full Floorplan">
+        </div>
+
+        <!-- CTA ROW -->
+        <div class="macc-cta">
+          <p>Interested in The Braemar? Download the brochure or request a private consultation.</p>
+          <div class="macc-cta-buttons">
+            <a href="contact.html" class="btn-gold">Request Info</a>
+            <a href="brochures/braemar.pdf" target="_blank" class="btn-ghost">Download Brochure</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══ SITE PLAN ═══ -->
+<section class="siteplan-section">
+  <div class="sp-inner">
+    <div class="sp-head rv vis">
+      <span class="sp-eyebrow">Community Layout</span>
+      <h2 class="sp-h2">Community <em>Site Plan</em></h2>
+      <p class="sp-intro">All Previn Court homes are built within the same community. Available, sold, and reserved lots are highlighted on the site plan below.</p>
+    </div>
+    <div class="sp-img-wrap rv d1 vis">
+      <img src="images/siteplan.jpg" alt="Previn Court Community Site Plan">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW TO CHOOSE GUIDE ═══ -->
+<section class="choose-section">
+  <div class="cs-inner">
+    <div class="cs-head rv vis">
+      <span class="sp-eyebrow">A Buyer's Guide</span>
+      <h2 class="cs-h2">How to Choose <em>Your Model</em></h2>
+      <p class="cs-intro">Three questions to narrow it down. Each model is built to the same standard — the choice is really about how you want to live.</p>
+    </div>
+    <div class="cs-step-grid">
+      <div class="cs-step rv d1 vis">
+        <span class="cs-step-num">01</span>
+        <div class="cs-step-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+        <h3 class="cs-step-h3">Two-storey or bungalow?</h3>
+        <p class="cs-step-p">Bungalows put all primary living on one level — ideal for downsizers or anyone preferring step-free everyday flow. Two-storey homes maximize square footage on the same lot footprint.</p>
+      </div>
+      <div class="cs-step rv d2 vis">
+        <span class="cs-step-num">02</span>
+        <div class="cs-step-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M14 20c0-2.4 1.8-4 4-4s4 1.6 4 4"/></svg></div>
+        <h3 class="cs-step-h3">How many bedrooms do you need?</h3>
+        <p class="cs-step-p">Bedroom counts range from 2 to 5 across our models. Consider home offices, guest rooms, or multi-generational living when narrowing your range.</p>
+      </div>
+      <div class="cs-step rv d3 vis">
+        <span class="cs-step-num">03</span>
+        <div class="cs-step-icon"><svg viewBox="0 0 24 24"><path d="M3 12h18M5 7l-2 5 2 5M19 7l2 5-2 5M9 12h.01M12 12h.01M15 12h.01"/></svg></div>
+        <h3 class="cs-step-h3">Which elevation feels like home?</h3>
+        <p class="cs-step-p">Each model is offered in Elevation A and B — same interior layout, different exterior architectural treatment. Click any model above to switch between them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OTHER COLLECTIONS ═══ -->
+<section class="other-coll">
+  <div class="oc-inner">
+    <div class="oc-head rv vis">
+      <span class="oc-eyebrow">Explore More</span>
+      <h2 class="oc-h2">Our Other <em>Collections</em></h2>
+    </div>
+    <div class="oc-grid">
+    <a href="collection-32ft.html" class="oc-card">
+      <span class="oc-card-eyebrow">32' Collection</span>
+      <h3 class="oc-card-name">The <em>Modern Family Homes</em></h3>
+      <p class="oc-card-meta">1,650–2,295 sqft · 5 Models</p>
+      <div class="oc-card-cta">Explore Collection <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </a>
+    <a href="collection-40ft.html" class="oc-card">
+      <span class="oc-card-eyebrow">40' Collection</span>
+      <h3 class="oc-card-name">The <em>Executive Homes</em></h3>
+      <p class="oc-card-meta">2,054–2,900 sqft · 5 Models</p>
+      <div class="oc-card-cta">Explore Collection <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-col rv vis">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="community.html">Community</a>
+  </div>
+  <div class="foot-col rv d1 vis">
+    <a href="models.html">Models</a>
+    <a href="gallery.html">Resources</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="foot-center rv d2 vis">
+    
+    <img src="images/logo-full.png" alt="Previn Court Homes" style="height:55px;width:auto;display:block;margin:0 auto">
+    <div class="foot-copy">©2026 Previn Court Homes.</div>
+  </div>
+  <div class="foot-addr rv d3 vis">
+    <span>212 WALKER BOULEVARD,</span>
+    <span>ALLISTON, ONTARIO</span>
+    <span class="phone">705-434-0255</span>
+  </div>
+</footer>
+
+<script>
+
+/* preloader */
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('page-preloader').classList.add('done');},1900);});
+
+/* nav scroll state */
+window.addEventListener('scroll',function(){var n=document.getElementById('main-nav');if(!n)return;n.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+
+/* custom cursor */
+(function(){var d=document.getElementById('cur-dot'),r=document.getElementById('cur-ring');if(!d||!r)return;var mx=0,my=0,rx=0,ry=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;r.style.left=rx+'px';r.style.top=ry+'px';requestAnimationFrame(loop);})();document.querySelectorAll('a,button,.mgs-card,.macc-elev-btn,.model-acc-header,.btn-gold,.btn-ghost,.oc-card,.sb-back').forEach(function(el){el.addEventListener('mouseenter',function(){r.classList.add('big');});el.addEventListener('mouseleave',function(){r.classList.remove('big');});});})();
+
+/* reveal observer */
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv,.rv-l,.rv-r').forEach(function(el){if(!el.classList.contains('vis'))io.observe(el);});})();
+
+/* models grid: click card → expand corresponding accordion + scroll to it */
+(function(){
+  document.querySelectorAll('.mgs-card').forEach(function(card){
+    card.addEventListener('click',function(){
+      var target=card.dataset.target;
+      var acc=document.getElementById(target);
+      if(!acc)return;
+      acc.classList.add('open');
+      var btn=acc.querySelector('.model-acc-header');
+      if(btn)btn.setAttribute('aria-expanded','true');
+      /* small delay so the expansion height calculates before we scroll */
+      setTimeout(function(){
+        var top=acc.getBoundingClientRect().top+window.scrollY-80;
+        window.scrollTo({top:top,behavior:'smooth'});
+      },80);
+    });
+  });
+})();
+
+/* model accordion toggle (single-open: opening one closes others) */
+(function(){
+  var allAccs=document.querySelectorAll('.model-acc');
+  document.querySelectorAll('.model-acc-header').forEach(function(h){
+    h.addEventListener('click',function(){
+      var acc=h.closest('.model-acc');
+      var willOpen=!acc.classList.contains('open');
+      /* close all other accordions first */
+      allAccs.forEach(function(other){
+        if(other!==acc){
+          other.classList.remove('open');
+          var ob=other.querySelector('.model-acc-header');
+          if(ob)ob.setAttribute('aria-expanded','false');
+        }
+      });
+      /* then toggle this one */
+      acc.classList.toggle('open',willOpen);
+      h.setAttribute('aria-expanded',willOpen?'true':'false');
+    });
+  });
+})();
+
+/* elevation A/B button: swaps the EXTERIOR RENDER (floorplan image is single, doesn't change) */
+(function(){
+  document.querySelectorAll('.model-acc').forEach(function(acc){
+    var btns=acc.querySelectorAll('.macc-elev-btn');
+    var renders=acc.querySelectorAll('.macc-render-img');
+    var floorplans=acc.querySelectorAll('.macc-fp-img');
+    btns.forEach(function(b){
+      b.addEventListener('click',function(){
+        btns.forEach(function(x){x.classList.remove('active');x.setAttribute('aria-selected','false');});
+        b.classList.add('active');b.setAttribute('aria-selected','true');
+        var elev=b.dataset.elev;
+        renders.forEach(function(r){r.classList.toggle('active',r.dataset.elev===elev);});
+        /* Switch floorplans - extract base elevation (a/b) from variants like front-a, side-b */
+        var baseElev=elev.includes('-')?elev.split('-')[1]:elev;
+        floorplans.forEach(function(f){f.classList.toggle('active',f.dataset.elev===baseElev);});
+      });
+    });
+  });
+})();
+
+</script>
+
+<script src="mobile-menu.js"></script>
+</body>
+</html>
